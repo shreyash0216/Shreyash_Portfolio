@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreyash Atre | Backend-Focused Software Developer</title>
+    <meta name="description"
+        content="Portfolio of Shreyash Atre, a Software Developer and Backend-focused CS student building scalable APIs and intelligent systems.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <div class="glow-container">
+        <div class="glow-effect"></div>
+    </div>
+
+    <nav id="navbar">
+        <div class="nav-content">
+            <div class="logo">
+                <span class="bracket">&lt;</span>
+                <span class="logo-text">Shreyash Atre</span>
+                <span class="bracket">&gt;</span>
+            </div>
+            <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12" class="line-middle"></line>
+                    <line x1="3" y1="6" x2="21" y2="6" class="line-top"></line>
+                    <line x1="3" y1="18" x2="21" y2="18" class="line-bottom"></line>
+                </svg>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact" class="nav-cta">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section id="hero">
+            <div class="hero-bg-code">
+                <pre><code>
+async function initPortfolio() {
+  const developer = "Shreyash Atre";
+  const focus = ["Backend", "AI/ML", "APIs"];
+  
+  await buildSystems({
+    scalability: true,
+    cleanArchitecture: true
+  });
+}
+                </code></pre>
+            </div>
+            <div class="hero-layout">
+                <div class="hero-left">
+                    <div class="status-badge">
+                        <span class="status-dot pulse"></span>
+                        Available for opportunities
+                    </div>
+                    <h1 class="hero-title">Shreyash Atre</h1>
+                    <h2 class="hero-subtitle">Backend-Focused Software Developer</h2>
+                    <p class="hero-tagline">
+                        Building scalable APIs, intelligent systems, and structured backend-driven applications with
+                        high availability and precision.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="https://github.com/shreyash0216" target="_blank" class="btn btn-primary">
+                            <i data-lucide="github"></i> GitHub
+                        </a>
+                        <a href="https://drive.google.com/file/d/1Tjuld_wD53jgKqbqb37JQAIhrKJk5hBY/view?usp=sharing"
+                            target="_blank" class="btn btn-secondary">
+                            <i data-lucide="download"></i> Resume
+                        </a>
+                        <a href="https://in.linkedin.com/in/shreyash-atre-901340317" target="_blank"
+                            class="btn btn-outline">
+                            <i data-lucide="linkedin"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-right">
+                    <div class="stats-card">
+                        <h3>System Stack</h3>
+                        <ul>
+                            <li>Node.js / Express.js APIs</li>
+                            <li>PostgreSQL & SQL Logic</li>
+                            <li>Auth & Validation Flows</li>
+                            <li>LLM & AI Integration</li>
+                            <li>Docker Containerization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="system-overview">
+            <div class="container overview-flex">
+                <div class="overview-item"><i data-lucide="check-circle-2"></i> Node.js APIs</div>
+                <div class="overview-item"><i data-lucide="check-circle-2"></i> Authentication</div>
+                <div class="overview-item"><i data-lucide="check-circle-2"></i> PostgreSQL</div>
+                <div class="overview-item"><i data-lucide="check-circle-2"></i> LLM Integration</div>
+                <div class="overview-item"><i data-lucide="check-circle-2"></i> Docker Basics</div>
+            </div>
+        </section>
+
+        <section id="about" class="section-padding">
+            <div class="container">
+                <h2 class="section-title">About</h2>
+                <div class="about-grid">
+                    <div class="about-text-card">
+                        <p>
+                            Computer Science student with <strong>8.61 CGPA</strong> focused on backend logic, API
+                            integration, AI-based systems, and clean architecture. Experienced in building LLM-powered
+                            apps, object detection pipelines, and full workflow-based applications.
+                        </p>
+                    </div>
+                    <div class="about-meta-grid">
+                        <div class="meta-card">
+                            <i data-lucide="graduation-cap"></i>
+                            <div>
+                                <h3>Education</h3>
+                                <p>B.Sc Computer Science (2024-2027)</p>
+                                <h4>Sir Parshurambhau College, Pune</h4>
+                            </div>
+                        </div>
+                        <div class="meta-card">
+                            <i data-lucide="map-pin"></i>
+                            <div>
+                                <h3>Location</h3>
+                                <p>Pune, India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="github-panel" style="margin-top: 4rem;">
+                    <div class="github-header">
+                        <h3><i data-lucide="github"></i> GitHub Engine Stats</h3>
+                        <span class="github-sub">Updated Daily</span>
+                    </div>
+                    <div class="github-grid">
+                        <div class="github-card">
+                            <h4>Contributions</h4>
+                            <div class="github-val">100+</div>
+                            <span class="github-sub">Last Year</span>
+                        </div>
+                        <div class="github-card">
+                            <h4>Persistence</h4>
+                            <div class="github-val">Active</div>
+                            <span class="github-sub">System Pulse</span>
+                        </div>
+                        <div class="github-card">
+                            <h4>Core Stack</h4>
+                            <div class="github-val">Python / JS</div>
+                            <span class="github-sub">Primary Engines</span>
+                        </div>
+                    </div>
+                    <div class="contribution-track">
+                        <h4>Contribution Pulse</h4>
+                        <div class="contribution-grid" id="contributionGrid">
+                            <!-- Cells added by script or static mock -->
+                        </div>
+                        <p
+                            style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-secondary); margin-top: 1rem;">
+                            “Strong fundamentals beat flashy buzzwords”
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section-padding">
+            <div class="container">
+                <h2 class="section-title">Technical Systems</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <i data-lucide="layers"></i>
+                            <h3>Backend Systems</h3>
+                        </div>
+                        <div class="skill-metric">
+                            <span class="metric-title">Logic & Flow</span>
+                            <span class="metric-sub">Node.js • Express • REST APIs</span>
+                        </div>
+                        <div class="skill-metric">
+                            <span class="metric-title">Security</span>
+                            <span class="metric-sub">Auth Logic • Secure Workflows</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <i data-lucide="code-2"></i>
+                            <h3>Programming</h3>
+                        </div>
+                        <div class="skill-metric">
+                            <span class="metric-title">Logic Engines</span>
+                            <span class="metric-sub">Python • C++ • SQL • JavaScript</span>
+                        </div>
+                        <div class="skill-metric">
+                            <span class="metric-title">Analysis</span>
+                            <span class="metric-sub">R • C • Data Handling</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <i data-lucide="cpu"></i>
+                            <h3>AI Systems</h3>
+                        </div>
+                        <div class="skill-metric">
+                            <span class="metric-title">Inference</span>
+                            <span class="metric-sub">LLM Integration • YOLOv3</span>
+                        </div>
+                        <div class="skill-metric">
+                            <span class="metric-title">Data Extraction</span>
+                            <span class="metric-sub">Tesseract OCR • HuggingFace</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <i data-lucide="terminal"></i>
+                            <h3>Tools</h3>
+                        </div>
+                        <div class="skill-metric">
+                            <span class="metric-title">Environment</span>
+                            <span class="metric-sub">Git • Linux • VS Code</span>
+                        </div>
+                        <div class="skill-metric">
+                            <span class="metric-title">Deployment</span>
+                            <span class="metric-sub">Docker Basics • Shell Scripts</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section-padding">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-grid">
+                    <!-- Careasa -->
+                    <div class="project-card">
+                        <div class="project-visual db-visual">
+                            <div class="table">
+                                <div class="table-header">users</div>
+                                <div class="table-rows"><span>id</span><span>hash</span></div>
+                            </div>
+                            <div class="table-connector"></div>
+                            <div class="table">
+                                <div class="table-header">crm_meta</div>
+                                <div class="table-rows"><span>user_id</span><span>data</span></div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Careasa <span class="sys-tag">CRM</span></h3>
+                            <p class="project-tagline">Healthcare Backend System</p>
+                            <div class="project-meta">
+                                <span>Arch: Relational</span>
+                                <span>Role: Backend Architect</span>
+                            </div>
+                            <p class="project-desc">Scalable CRM backend with Node.js and PostgreSQL, focusing on secure
+                                data workflows.</p>
+                            <div class="tech-badges">
+                                <span>Node.js</span>
+                                <span>PostgreSQL</span>
+                                <span>Auth</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" class="btn-sm"><i data-lucide="github"></i> Internal</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Quizzify -->
+                    <div class="project-card">
+                        <div class="project-visual code-visual">
+                            <div class="visual-header">
+                                <div class="dots"><span class="red"></span><span class="yellow"></span><span
+                                        class="green"></span></div>
+                                <span class="filename">quizzify-engine.py</span>
+                            </div>
+                            <div class="visual-body">
+                                <pre><code>def process_quiz(data):
+# LLM Validation
+if validate_json(data):
+return generate_results(data)</code></pre>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Quizzify <span class="sys-tag">AI</span></h3>
+                            <p class="project-tagline">LLM Powered Quiz Engine</p>
+                            <div class="project-meta">
+                                <span>Arch: API Driven</span>
+                                <span>Role: Backend Logic</span>
+                            </div>
+                            <p class="project-desc">Game engine logic, state management, and API workflow for
+                                intelligent quiz generation.</p>
+                            <div class="tech-badges">
+                                <span>Python</span>
+                                <span>HuggingFace</span>
+                                <span>JSON</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/shreyash0216/Quizzify" class="btn-sm"><i
+                                        data-lucide="github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Object Detection -->
+                    <div class="project-card">
+                        <div class="project-visual pipeline-visual">
+                            <div class="line"></div>
+                            <div class="node active">YOLO</div>
+                            <div class="node-arrow">→</div>
+                            <div class="node active">OCR</div>
+                            <div class="node-arrow">→</div>
+                            <div class="node">DATA</div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Object Detection & OCR <span class="sys-tag">CV</span></h3>
+                            <p class="project-tagline">Real-time Inference Pipeline</p>
+                            <div class="project-meta">
+                                <span>Arch: Sequential Pipeline</span>
+                                <span>Role: CV Architecture</span>
+                            </div>
+                            <p class="project-desc">A robust assistant utilizing YOLOv3 and Tesseract for real-time
+                                video stream processing.</p>
+                            <div class="tech-badges">
+                                <span>YOLOv3</span>
+                                <span>Tesseract</span>
+                                <span>OpenCV</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/shreyash0216/Object-Detection" class="btn-sm"><i
+                                        data-lucide="github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sphere Coding Club -->
+                    <div class="project-card">
+                        <div class="project-visual ui-visual">
+                            <div class="ui-mockup">
+                                <div class="nav-bar"></div>
+                                <div class="hero-block"></div>
+                                <div class="grid-blocks">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Sphere Coding Club <span class="sys-tag">UI</span></h3>
+                            <p class="project-tagline">Structured Club Architecture</p>
+                            <div class="project-meta">
+                                <span>Arch: Component-Based</span>
+                                <span>Role: Lead Dev</span>
+                            </div>
+                            <p class="project-desc">Responsive frontend with a focus on organized component hierarchy
+                                and performance.</p>
+                            <div class="tech-badges">
+                                <span>Responsive</span>
+                                <span>Structured UI</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://shreyash0216.github.io/sphere-coding-club/" class="btn-sm"><i
+                                        data-lucide="github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- GRA Interface -->
+                    <div class="project-card">
+                        <div class="project-visual api-visual">
+                            <div class="request-block">
+                                <span class="method">GET</span> /api/v1/data
+                            </div>
+                            <div class="response-block">
+                                <span class="status">200 OK</span>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>GRA Web Interface <span class="sys-tag">API</span></h3>
+                            <p class="project-tagline">Dynamic API Integration</p>
+                            <div class="project-meta">
+                                <span>Arch: Event-Driven UI</span>
+                                <span>Role: App Architecture</span>
+                            </div>
+                            <p class="project-desc">Modern interface for interacting with complex backend systems via
+                                structured API endpoints.</p>
+                            <div class="tech-badges">
+                                <span>API Integration</span>
+                                <span>Dynamic UI</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/shreyash0216/Gra-2" class="btn-sm"><i
+                                        data-lucide="github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="section-padding">
+            <div class="container">
+                <div class="exp-cert-grid">
+                    <div class="experience-col">
+                        <h2 class="section-title">Experience</h2>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-marker"></div>
+                                <div class="timeline-content">
+                                    <h3>Careasa – Backend CRM / Application System</h3>
+                                    <p class="timeline-subtitle">Software Developer | Node.js & PostgreSQL</p>
+                                    <div class="experience-content-rich">
+                                        <div class="project-visual db-visual exp-visual">
+                                            <div class="table">
+                                                <div class="table-header">users</div>
+                                                <div class="table-rows">
+                                                    <span>id (PK)</span>
+                                                    <span>email</span>
+                                                    <span>hash</span>
+                                                </div>
+                                            </div>
+                                            <div class="table-connector"></div>
+                                            <div class="table">
+                                                <div class="table-header">crm_data</div>
+                                                <div class="table-rows">
+                                                    <span>user_id</span>
+                                                    <span>payload</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="exp-info">
+                                            <ul class="exp-tech-list">
+                                                <li><i data-lucide="check-circle-2"></i> Node.js backend with PostgreSQL
+                                                    for structured data persistence</li>
+                                                <li><i data-lucide="check-circle-2"></i> Implemented API integration,
+                                                    authentication logic, and verification flow</li>
+                                                <li><i data-lucide="check-circle-2"></i> Database migrations and
+                                                    structured architecture for long-term scalability</li>
+                                                <li><i data-lucide="check-circle-2"></i> Focused on robust error
+                                                    handling and API performance optimization</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="certs-col">
+                        <h2 class="section-title">Certifications</h2>
+                        <ul class="cert-list">
+                            <li>
+                                <i data-lucide="award"></i>
+                                <span>OCI Generative AI Professional</span>
+                            </li>
+                            <li>
+                                <i data-lucide="award"></i>
+                                <span>Deloitte Technology Simulation</span>
+                            </li>
+                            <li>
+                                <i data-lucide="award"></i>
+                                <span>NPTEL Programming in C</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer id="contact">
+            <div class="container footer-content">
+                <div class="footer-left">
+                    <h2>Get in touch</h2>
+                    <p>Building the future of backend systems, one API at a time.</p>
+                    <a href="mailto:shreyashatre16@gmail.com" class="footer-email">shreyashatre16@gmail.com</a>
+                </div>
+                <div class="footer-right">
+                    <div class="social-links">
+                        <a href="https://github.com/shreyash0216"><i data-lucide="github"></i></a>
+                        <a href="https://in.linkedin.com/in/shreyash-atre-901340317"><i data-lucide="linkedin"></i></a>
+                        <a href="https://www.instagram.com/theshreyash16/"><i data-lucide="instagram"></i></a>
+                        <a href="https://leetcode.com/u/Shreyash_Atre/"><i data-lucide="code"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="container">
+                    <p>&copy; 2026 Shreyash Atre. Built with modularity and precision.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
