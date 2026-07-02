@@ -94,7 +94,7 @@ const Hero = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10 opacity-60" />
 
               <img
-                src="/shreyash.jpg"
+                src="shreyash.jpg"
                 alt="Shreyash Atre"
                 className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
               />
