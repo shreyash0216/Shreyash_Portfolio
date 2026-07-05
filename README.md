@@ -1,4 +1,4 @@
-# Shreyash Atre | Backend & Product Engineer
+# Shreyash Atre | Software Engineer
 
 A high-performance, production-grade engineering portfolio built with **Next.js 15** and **React 19**. This platform is designed to demonstrate structural thinking, distributed system architecture, and product-level ownership.
 

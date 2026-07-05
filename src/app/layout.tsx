@@ -13,8 +13,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Shreyash Atre | Backend & Product Engineer",
-  description: "Senior Software Developer specializing in scalable backend systems, AI integration, and production-grade SaaS.",
+  title: "Shreyash Atre | Software Engineer",
+  description: "Software Engineer specializing in scalable backend systems, AI integration, and production-grade SaaS.",
   keywords: ["Software Engineer", "Backend Developer", "Node.js", "System Architecture", "SaaS Founder"],
 };
 

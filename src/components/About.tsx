@@ -17,7 +17,7 @@ const About = () => {
           <div className="glass-card p-6 md:p-8 border-white/5 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-1 h-full bg-accent" />
             <p className="text-xl md:text-2xl text-zinc-300 leading-relaxed">
-              Software Developer with a <span className="text-white font-bold">8.68 CGPA</span> focused on backend logic,
+              Software Engineer with a <span className="text-white font-bold">8.68 CGPA</span> focused on backend logic,
               scalable API architecture, and AI-driven systems.
             </p>
             <p className="text-zinc-500 mt-4 leading-relaxed">

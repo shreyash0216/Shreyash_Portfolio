@@ -29,7 +29,7 @@ const Hero = () => {
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                 className="text-7xl md:text-9xl font-extrabold tracking-tighter leading-[0.85] text-mask"
               >
-                Software <br /> Developer
+                Software <br /> Engineer
               </motion.h1>
 
               <motion.p
@@ -107,7 +107,7 @@ const Hero = () => {
               </div>
 
               <div className="absolute bottom-8 left-8 right-8 z-20 p-6 bg-black/40 backdrop-blur-md border border-white/10 rounded-[2rem]">
-                <p className="text-[10px] font-mono text-accent uppercase tracking-[0.2em] mb-2 font-bold">Engineering Lead</p>
+                <p className="text-[10px] font-mono text-accent uppercase tracking-[0.2em] mb-2 font-bold">Software Engineer</p>
                 <p className="text-sm text-zinc-300 font-medium leading-relaxed">
                   Founder at Syantrex Technologies. Building the future of SaaS.
                 </p>
