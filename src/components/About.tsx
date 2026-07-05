@@ -17,12 +17,12 @@ const About = () => {
           <div className="glass-card p-6 md:p-8 border-white/5 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-1 h-full bg-accent" />
             <p className="text-xl md:text-2xl text-zinc-300 leading-relaxed">
-              Software Engineer with a <span className="text-white font-bold">8.68 CGPA</span> focused on backend logic,
+              Software Engineer with a <span className="text-white font-bold">8.68 CGPA</span> focused on full-stack development,
               scalable API architecture, and AI-driven systems.
             </p>
             <p className="text-zinc-500 mt-4 leading-relaxed">
               I approach software engineering with a product-first mindset—bridging the gap between
-              complex backend logic and seamless user experiences. Whether it's architecting
+              scalable architecture and seamless user experiences. Whether it's architecting
               multi-tenant SaaS platforms or engineering real-time communication infrastructure,
               my focus is always on reliability, performance, and scalability.
             </p>
@@ -40,7 +40,7 @@ const About = () => {
               <div className="p-3 bg-purple-500/10 rounded-xl text-purple-400"><Cpu size={20} /></div>
               <div>
                 <h4 className="text-sm font-bold text-zinc-300 uppercase tracking-widest mb-1">Core Focus</h4>
-                <p className="text-xs text-zinc-500 leading-relaxed">Backend Systems, Cloud Infrastructure, and AI/ML Integration.</p>
+                <p className="text-xs text-zinc-500 leading-relaxed">Full-Stack Systems, Cloud Infrastructure, and AI/ML Integration.</p>
               </div>
             </div>
           </div>

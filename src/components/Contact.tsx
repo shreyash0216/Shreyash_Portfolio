@@ -52,11 +52,13 @@ const Contact = () => {
             {[
               { label: "Github", icon: <Github size={20} />, href: "https://github.com/shreyash0216" },
               { label: "LinkedIn", icon: <Linkedin size={20} />, href: "https://linkedin.com/in/shreyash-atre-901340317" },
-              { label: "Resume", icon: <FileCode size={20} />, href: "#" },
+              { label: "Resume", icon: <FileCode size={20} />, href: "https://drive.google.com/file/d/1L77HQNQ3cc_8jI85kSaGXLg5SbB_2a_X/view?usp=share_link" },
             ].map((link) => (
               <a
                 key={link.label}
                 href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-10 py-5 bg-white/[0.03] border border-white/5 rounded-2xl flex items-center gap-4 hover:bg-white/[0.08] hover:border-white/20 transition-all group relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-accent/5 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />

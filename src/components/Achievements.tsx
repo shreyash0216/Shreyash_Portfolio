@@ -52,8 +52,12 @@ const Achievements = () => {
             className="flex gap-4 relative"
           >
             <div className="flex flex-col items-center">
-              <div className="w-12 h-12 rounded-2xl bg-zinc-950 border border-white/10 flex items-center justify-center shrink-0 shadow-2xl z-10">
-                {ach.icon}
+              <div className="w-12 h-12 rounded-2xl bg-zinc-950 border border-white/10 flex items-center justify-center shrink-0 shadow-2xl z-10 overflow-hidden">
+                {ach.org === 'DermaScanAI Backend Lead' ? (
+                  <img src="/dermascan-logo.png" alt="DermaScanAI" className="w-full h-full object-cover" />
+                ) : (
+                  ach.icon
+                )}
               </div>
               {index < ACHIEVEMENTS.length - 1 && (
                 <div className="w-px h-full bg-gradient-to-b from-white/10 to-transparent mt-4" />

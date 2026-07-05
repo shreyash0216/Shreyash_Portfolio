@@ -3,7 +3,18 @@
 import { motion } from "framer-motion";
 import { Terminal, ShieldCheck, Cpu, Briefcase } from "lucide-react";
 
-const EXPERIENCES = [
+interface ExperienceItem {
+  company: string;
+  role: string;
+  period: string;
+  status: string;
+  impact: string[];
+  tech: string[];
+  logo?: string;
+  icon?: React.ReactNode;
+}
+
+const EXPERIENCES: ExperienceItem[] = [
   {
     company: "Moash",
     role: "Web & Software Development Intern",
@@ -15,7 +26,7 @@ const EXPERIENCES = [
       "Collaborated on production-level deployments, ensuring 99.9% system availability.",
     ],
     tech: ["Next.js 14", "TypeScript", "Tailwind", "REST APIs"],
-    icon: <Terminal size={20} className="text-accent" />
+    logo: "/moash-logo.png"
   },
   {
     company: "Syantrex Technologies",
@@ -28,7 +39,7 @@ const EXPERIENCES = [
       "Automated deployment pipelines and cloud infrastructure management for scalable delivery.",
     ],
     tech: ["Product Ownership", "Architecture", "Backend", "Cloud Deploy"],
-    icon: <Cpu size={20} className="text-purple-400" />
+    logo: "/syantrex-logo.png"
   },
   {
     company: "Careasa Healthcare",
@@ -41,7 +52,7 @@ const EXPERIENCES = [
       "Synchronized AWS S3 and RDS models, resolving cross-platform data alignment issues.",
     ],
     tech: ["Node.js", "JWT", "AWS S3/RDS", "Agora", "Flutter"],
-    icon: <ShieldCheck size={20} className="text-green-400" />
+    logo: "/careasa-logo.png"
   },
 ];
 
@@ -87,10 +98,14 @@ const Experience = () => {
               <div className="flex flex-col items-center shrink-0 relative z-10">
                 <motion.div
                   whileHover={{ scale: 1.2 }}
-                  className="w-12 h-12 rounded-2xl bg-zinc-950 border border-white/10 flex items-center justify-center shadow-2xl transition-all group-hover:border-accent/50 group-hover:shadow-accent/20"
+                  className="w-12 h-12 rounded-2xl bg-zinc-950 border border-white/10 flex items-center justify-center shadow-2xl transition-all group-hover:border-accent/50 group-hover:shadow-accent/20 overflow-hidden"
                 >
-                  <div className="transition-transform group-hover:rotate-2">
-                    {exp.icon}
+                  <div className="transition-transform group-hover:rotate-2 w-full h-full flex items-center justify-center">
+                    {exp.logo ? (
+                      <img src={exp.logo} alt={exp.company} className="w-full h-full object-cover" />
+                    ) : (
+                      exp.icon
+                    )}
                   </div>
                 </motion.div>
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-accent/5 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />

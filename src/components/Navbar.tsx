@@ -46,9 +46,9 @@ const Navbar = () => {
             const isActive = activeSection === id;
 
             return (
-              <Link
+              <button
                 key={item}
-                href={`#${id}`}
+                onClick={() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })}
                 className={`px-5 py-2 text-[10px] font-mono uppercase tracking-[0.2em] transition-colors relative ${
                   isActive ? "text-white" : "text-zinc-500 hover:text-white"
                 }`}
@@ -60,7 +60,7 @@ const Navbar = () => {
                     className="absolute inset-0 bg-white/5 rounded-full z-[-1]"
                   />
                 )}
-              </Link>
+              </button>
             );
           })}
         </div>

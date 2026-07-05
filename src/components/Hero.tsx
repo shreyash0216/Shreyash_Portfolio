@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, Linkedin, FileText, Cpu, Activity, Terminal, Globe } from "lucide-react";
+import { Github, Linkedin, Cpu, Activity, Terminal, Globe, ArrowDownToLine, ChevronRight } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -9,27 +9,16 @@ const Hero = () => {
       <div className="container max-w-[1400px] mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
 
-          <div className="lg:col-span-8 space-y-8">
-            <div className="space-y-4">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                className="flex flex-wrap items-center gap-4"
-              >
-                <span className="engineering-callout">System.status("ACTIVE")</span>
-                <div className="flex items-center gap-2 px-2 py-1 rounded bg-accent/5 border border-accent/20 text-[10px] font-mono text-accent uppercase">
-                  <div className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
-                  Live Deployment: v2.4.0
-                </div>
-              </motion.div>
-
+          <div className="lg:col-span-8 space-y-10">
+            <div className="space-y-6">
               <motion.h1
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="text-7xl md:text-9xl font-extrabold tracking-tighter leading-[0.85] text-mask"
+                className="text-7xl md:text-8xl lg:text-[10rem] font-extrabold tracking-tight leading-[0.8] text-white"
               >
-                Software <br /> Engineer
+                Software <br />
+                <span className="text-zinc-500">Engineer</span>
               </motion.h1>
 
               <motion.p
@@ -53,7 +42,7 @@ const Hero = () => {
                 { label: "Location", value: "Pune, IN", icon: <Globe size={14} /> },
                 { label: "Uptime", value: "4+ Years", icon: <Activity size={14} /> },
                 { label: "Core Stack", value: "Node/AWS", icon: <Cpu size={14} /> },
-                { label: "Focus", value: "Backend/AI", icon: <Terminal size={14} /> },
+                { label: "Focus", value: "Fullstack / SWE", icon: <Terminal size={14} /> },
               ].map((stat, i) => (
                 <div key={i} className="p-4 bg-white/[0.02] border border-white/5 rounded-xl hover:bg-white/[0.04] transition-all hover:border-white/10 group cursor-default">
                   <div className="flex items-center gap-2 text-zinc-600 mb-2 group-hover:text-accent transition-colors">
@@ -70,14 +59,28 @@ const Hero = () => {
               transition={{ delay: 0.8 }}
               className="flex flex-wrap items-center gap-6 pt-2"
             >
-              <button className="px-10 py-4 bg-white text-black font-bold rounded-2xl hover:scale-105 active:scale-95 transition-all shadow-xl shadow-white/5">
-                View Projects
+              <button
+                onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+                className="group px-10 py-4 bg-white text-black font-bold rounded-2xl hover:bg-zinc-200 transition-all flex items-center gap-2"
+              >
+                View Projects <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </button>
-              <div className="flex items-center gap-6">
-                <a href="https://github.com/shreyash0216" className="text-zinc-500 hover:text-white transition-all transform hover:scale-110"><Github size={24} /></a>
-                <a href="https://linkedin.com/in/shreyash-atre-901340317" className="text-zinc-500 hover:text-white transition-all transform hover:scale-110"><Linkedin size={24} /></a>
-                <a href="#" className="flex items-center gap-2 text-zinc-500 hover:text-white transition-colors font-mono text-xs uppercase tracking-widest font-bold">
-                   Resume.pdf <FileText size={16} />
+
+              <div className="flex items-center gap-4">
+                <a href="https://github.com/shreyash0216" className="p-4 bg-white/[0.03] border border-white/5 rounded-xl text-zinc-500 hover:text-white transition-all hover:border-white/10">
+                  <Github size={20} />
+                </a>
+                <a href="https://linkedin.com/in/shreyash-atre-901340317" className="p-4 bg-white/[0.03] border border-white/5 rounded-xl text-zinc-500 hover:text-white transition-all hover:border-white/10">
+                  <Linkedin size={20} />
+                </a>
+                <a
+                  href="https://drive.google.com/file/d/1L77HQNQ3cc_8jI85kSaGXLg5SbB_2a_X/view?usp=share_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 px-6 py-4 bg-accent/10 border border-accent/20 text-accent font-bold rounded-2xl hover:bg-accent hover:text-white transition-all group"
+                >
+                   <ArrowDownToLine size={20} className="group-hover:-translate-y-1 group-hover:translate-x-0.5 transition-transform" />
+                   Fetch CV
                 </a>
               </div>
             </motion.div>
@@ -98,13 +101,6 @@ const Hero = () => {
                 alt="Shreyash Atre"
                 className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
               />
-
-              <div className="absolute top-8 left-8 z-20">
-                <div className="px-4 py-2 bg-black/40 backdrop-blur-md border border-white/10 rounded-2xl flex items-center gap-3">
-                  <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-                  <span className="text-[10px] font-mono font-bold tracking-widest text-zinc-300">MOASH_INTERN_02</span>
-                </div>
-              </div>
 
               <div className="absolute bottom-8 left-8 right-8 z-20 p-6 bg-black/40 backdrop-blur-md border border-white/10 rounded-[2rem]">
                 <p className="text-[10px] font-mono text-accent uppercase tracking-[0.2em] mb-2 font-bold">Software Engineer</p>

@@ -14,8 +14,8 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: "Shreyash Atre | Software Engineer",
-  description: "Software Engineer specializing in scalable backend systems, AI integration, and production-grade SaaS.",
-  keywords: ["Software Engineer", "Backend Developer", "Node.js", "System Architecture", "SaaS Founder"],
+  description: "Software Engineer specializing in full-stack development, scalable systems, and production-grade SaaS.",
+  keywords: ["Software Engineer", "Full Stack Developer", "Node.js", "System Architecture", "SaaS Founder"],
 };
 
 export default function RootLayout({

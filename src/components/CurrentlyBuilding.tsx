@@ -17,7 +17,7 @@ const PROJECTS = [
     title: "Syantrex ERP",
     company: "Syantrex Technologies",
     role: "Founder & Lead",
-    desc: "A comprehensive multi-tenant ERP system for enterprise resource planning and client management.",
+    desc: "A comprehensive multi-tenant ERP system for enterprise resource planning and management.",
     stack: ["Node.js", "PostgreSQL", "Next.js", "Cloud"],
     status: "Since June 2026",
     accent: "#9333ea"
@@ -48,7 +48,15 @@ const CurrentlyBuilding = () => {
 
             <div className="flex justify-between items-start mb-4">
               <div>
-                <span className="text-[10px] font-mono font-bold text-accent uppercase tracking-widest">{project.company}</span>
+                <div className="flex items-center gap-3 mb-1">
+                  {project.company === 'Moash' && (
+                    <img src="/moash-logo.png" alt="Moash" className="w-5 h-5 rounded-sm object-cover" />
+                  )}
+                  {project.company === 'Syantrex Technologies' && (
+                    <img src="/syantrex-logo.png" alt="Syantrex" className="w-5 h-5 rounded-sm object-cover bg-white p-0.5" />
+                  )}
+                  <span className="text-[10px] font-mono font-bold text-accent uppercase tracking-widest">{project.company}</span>
+                </div>
                 <h3 className="text-3xl font-bold mt-1">{project.title}</h3>
               </div>
               <div className="px-3 py-1 rounded-full border border-white/10 text-[9px] font-mono text-zinc-500 uppercase tracking-widest">
