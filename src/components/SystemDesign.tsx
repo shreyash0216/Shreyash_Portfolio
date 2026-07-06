@@ -68,8 +68,8 @@ const SystemDesign = () => {
         </div>
       </div>
 
-      <div ref={containerRef} className="glass-card p-8 overflow-visible relative">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-4 relative lg:h-28">
+      <div ref={containerRef} className="glass-card p-6 md:p-8 overflow-x-auto relative scrollbar-hide">
+        <div className="flex items-center justify-between gap-6 relative lg:h-28 min-w-[900px] lg:min-w-0">
           {NODES.map((node, i) => {
             const isNeighbor = hoveredNode !== null && (hoveredNode === i - 1 || hoveredNode === i + 1);
             const isActive = hoveredNode === i;
@@ -78,7 +78,7 @@ const SystemDesign = () => {
             return (
               <div
                 key={i}
-                className="flex flex-col lg:flex-row items-center gap-4 relative z-10"
+                className="flex items-center gap-6 relative z-10"
                 onMouseEnter={() => setHoveredNode(i)}
                 onMouseLeave={() => setHoveredNode(null)}
               >
@@ -91,7 +91,7 @@ const SystemDesign = () => {
                   className="flex flex-col items-center gap-4 cursor-help relative"
                 >
                   <div
-                    className="w-16 h-16 rounded-2xl bg-black border border-zinc-800 flex items-center justify-center text-white transition-all shadow-2xl relative overflow-visible"
+                    className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-black border border-zinc-800 flex items-center justify-center text-white transition-all shadow-2xl relative overflow-visible"
                     style={{
                       boxShadow: isActive ? `0 0 40px ${node.color}40` : isNeighbor ? `0 0 20px ${node.color}10` : 'none',
                     }}
@@ -105,11 +105,11 @@ const SystemDesign = () => {
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, y: 15, scale: 0.95 }}
                           className={`absolute z-[100] w-64 p-5 bg-[#09090b]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl pointer-events-none
-                            ${i > NODES.length / 2 ? 'right-0 lg:-right-4 origin-right' : 'left-0 lg:-left-4 origin-left'}
+                            ${i > NODES.length / 2 ? 'right-0 origin-right' : 'left-0 origin-left'}
                             top-20
                           `}
                         >
-                          <div className="space-y-4">
+                          <div className="space-y-4 text-left">
                             <div>
                               <p className="text-[9px] font-mono text-accent uppercase tracking-widest mb-1">Purpose</p>
                               <p className="text-xs text-white font-bold leading-tight">{node.purpose}</p>
@@ -124,13 +124,12 @@ const SystemDesign = () => {
                               ))}
                             </div>
                           </div>
-                          {/* Tooltip arrow */}
                           <div className={`absolute -top-1 w-2 h-2 bg-[#09090b] border-t border-l border-white/10 rotate-45 ${i > NODES.length / 2 ? 'right-6' : 'left-6'}`} />
                         </motion.div>
                       )}
                     </AnimatePresence>
                   </div>
-                  <span className={`text-[10px] font-mono uppercase tracking-widest transition-all ${isActive ? 'text-white font-bold' : 'text-zinc-600'}`}>
+                  <span className={`text-[9px] md:text-[10px] font-mono uppercase tracking-widest transition-all whitespace-nowrap ${isActive ? 'text-white font-bold' : 'text-zinc-600'}`}>
                     {node.label}
                   </span>
                 </motion.div>
@@ -143,7 +142,7 @@ const SystemDesign = () => {
                         scaleX: hoveredNode === i || hoveredNode === i + 1 ? 1.2 : 1,
                         backgroundColor: hoveredNode === i || hoveredNode === i + 1 ? node.color : "#27272a"
                       }}
-                      className="hidden lg:block w-12 h-0.5 origin-left transition-colors"
+                      className="w-8 md:w-12 h-0.5 origin-left transition-colors"
                     />
                     <motion.div
                       animate={{
@@ -151,7 +150,7 @@ const SystemDesign = () => {
                         color: hoveredNode === i || hoveredNode === i + 1 ? node.color : "#27272a"
                       }}
                       transition={{ repeat: hoveredNode === i || hoveredNode === i + 1 ? Infinity : 0, duration: 1.5 }}
-                      className="hidden lg:block lg:-ml-2 transition-colors"
+                      className="-ml-2 transition-colors"
                     >
                       <ArrowRight size={16} />
                     </motion.div>
@@ -170,6 +169,11 @@ const SystemDesign = () => {
           </div>
         </div>
       </div>
+
+      {/* Mobile hint */}
+      <p className="mt-4 text-center text-[10px] font-mono text-zinc-600 uppercase tracking-widest lg:hidden">
+        Scroll horizontally to explore
+      </p>
     </section>
   );
 };

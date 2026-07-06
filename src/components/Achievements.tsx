@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Award, Trophy, ShieldCheck, Star } from "lucide-react";
+import { getAssetPath } from "@/lib/utils";
 
 const ACHIEVEMENTS = [
   {
@@ -54,7 +55,7 @@ const Achievements = () => {
             <div className="flex flex-col items-center">
               <div className="w-12 h-12 rounded-2xl bg-zinc-950 border border-white/10 flex items-center justify-center shrink-0 shadow-2xl z-10 overflow-hidden">
                 {ach.org === 'DermaScanAI Backend Lead' ? (
-                  <img src="/dermascan-logo.png" alt="DermaScanAI" className="w-full h-full object-cover" />
+                  <img src={getAssetPath("dermascan-logo.png")} alt="DermaScanAI" className="w-full h-full object-cover" />
                 ) : (
                   ach.icon
                 )}

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Github, ExternalLink, Code2, Layers, Briefcase, Zap, Terminal } from "lucide-react";
+import { getAssetPath } from "@/lib/utils";
 
 const PROJECTS = [
   {
@@ -14,7 +15,7 @@ const PROJECTS = [
     tech: ["Next.js", "Supabase", "TypeScript", "Vercel"],
     links: { demo: "https://www.moash.co.in/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnFJYRUAnFZlKy58zwFrAHOYL-sdZkpVb9TMDmFqncCZ6YcXyOG9giaRZbCUA_aem_v4jHb9GeD6r0rMDeZt463w" },
     accent: "#0070f3",
-    logo: "/moash-logo.png"
+    logo: "moash-logo.png"
   },
   {
     title: "Careasa CRM",
@@ -26,7 +27,7 @@ const PROJECTS = [
     tech: ["Node.js", "PostgreSQL", "AWS", "Agora SDK"],
     links: { demo: "https://www.careasa.com" },
     accent: "#3b82f6",
-    logo: "/careasa-logo.png"
+    logo: "careasa-logo.png"
   },
   {
     title: "Syantrex ERP",
@@ -38,7 +39,7 @@ const PROJECTS = [
     tech: ["Next.js", "PostgreSQL", "Tailwind", "Node.js"],
     links: { demo: "https://www.syantrex.online" },
     accent: "#9333ea",
-    logo: "/syantrex-logo.png"
+    logo: "syantrex-logo.png"
   },
   {
     title: "DermaScanAI",
@@ -50,7 +51,7 @@ const PROJECTS = [
     tech: ["Python", "TensorFlow", "Node.js", "Express"],
     links: { github: "https://github.com/siddheshwar09/DermaScanAI"},
     accent: "#10b981",
-    logo: "/dermascan-logo.png"
+    logo: "dermascan-logo.png"
   },
   {
     title: "GRA – Resilience Agent",
@@ -62,7 +63,7 @@ const PROJECTS = [
     tech: ["TypeScript", "Gemini API", "AWS", "ML"],
     links: { github: "https://github.com/shreyash0216/Gra-2"},
     accent: "#22c55e",
-    logo: "/gra-logo.png"
+    logo: "gra-logo.png"
   },
   {
     title: "OCR Assistant",
@@ -109,7 +110,7 @@ const Projects = () => {
 
               <div className="absolute inset-0 flex items-center justify-center p-8 md:p-12">
                 {project.logo ? (
-                   <img src={project.logo} alt={`${project.title} Logo`} className="w-48 md:w-64 h-auto opacity-80 group-hover:opacity-100 transition-opacity" />
+                   <img src={getAssetPath(project.logo)} alt={`${project.title} project logo`} className="w-48 md:w-64 h-auto opacity-80 group-hover:opacity-100 transition-opacity" />
                 ) : project.style === 'terminal' ? (
                    <div className="w-full h-full font-mono text-[100px] text-red-500/60 overflow-hidden leading-tight p-4 flex items-center justify-center text-center">
                       OCR Assistant
@@ -131,10 +132,24 @@ const Projects = () => {
 
               <div className="absolute bottom-8 left-8 flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
                 {project.links.github && (
-                  <a href={project.links.github} className="p-3 bg-black border border-white/10 rounded-xl hover:scale-110 transition-transform"><Github size={18} /></a>
+                  <a
+                    href={project.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-black border border-white/10 rounded-xl hover:scale-110 transition-transform"
+                  >
+                    <Github size={18} />
+                  </a>
                 )}
                 {project.links.demo && (
-                  <a href={project.links.demo} className="p-3 bg-black border border-white/10 rounded-xl hover:scale-110 transition-transform text-accent"><ExternalLink size={18} /></a>
+                  <a
+                    href={project.links.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 bg-black border border-white/10 rounded-xl hover:scale-110 transition-transform text-accent"
+                  >
+                    <ExternalLink size={18} />
+                  </a>
                 )}
               </div>
             </div>

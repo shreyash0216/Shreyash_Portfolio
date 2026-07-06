@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Terminal, ShieldCheck, Cpu, Briefcase } from "lucide-react";
+import { getAssetPath } from "@/lib/utils";
 
 interface ExperienceItem {
   company: string;
@@ -26,7 +27,7 @@ const EXPERIENCES: ExperienceItem[] = [
       "Collaborated on production-level deployments, ensuring 99.9% system availability.",
     ],
     tech: ["Next.js 14", "TypeScript", "Tailwind", "REST APIs"],
-    logo: "/moash-logo.png"
+    logo: "moash-logo.png"
   },
   {
     company: "Syantrex Technologies",
@@ -39,7 +40,7 @@ const EXPERIENCES: ExperienceItem[] = [
       "Automated deployment pipelines and cloud infrastructure management for scalable delivery.",
     ],
     tech: ["Product Ownership", "Architecture", "Backend", "Cloud Deploy"],
-    logo: "/syantrex-logo.png"
+    logo: "syantrex-logo.png"
   },
   {
     company: "Careasa Healthcare",
@@ -52,7 +53,7 @@ const EXPERIENCES: ExperienceItem[] = [
       "Synchronized AWS S3 and RDS models, resolving cross-platform data alignment issues.",
     ],
     tech: ["Node.js", "JWT", "AWS S3/RDS", "Agora", "Flutter"],
-    logo: "/careasa-logo.png"
+    logo: "careasa-logo.png"
   },
 ];
 
@@ -65,7 +66,7 @@ const StatusBadge = ({ status }: { status: string }) => {
 
   const config = configs[status];
   return (
-    <div className={`px-2 py-0.5 rounded-full border text-[9px] font-mono uppercase tracking-widest flex items-center gap-1.5 ${config.color}`}>
+    <div className={`px-2 py-0.5 rounded-full border text-[8px] md:text-[9px] font-mono uppercase tracking-widest flex items-center gap-1.5 ${config.color}`}>
       <span className="text-[7px]">{config.icon}</span>
       {config.label}
     </div>
@@ -75,16 +76,16 @@ const StatusBadge = ({ status }: { status: string }) => {
 const Experience = () => {
   return (
     <section id="experience" className="scroll-mt-32">
-      <div className="flex items-center gap-4 mb-8">
-        <h2 className="text-3xl font-bold">Professional Experience</h2>
+      <div className="flex items-center gap-4 mb-12">
+        <h2 className="text-2xl md:text-3xl font-bold">Experience</h2>
         <div className="h-px flex-1 bg-white/5"></div>
       </div>
 
-      <div className="max-w-5xl mx-auto relative">
+      <div className="max-w-5xl mx-auto relative px-2 md:px-0">
         {/* Vertical Timeline Line */}
-        <div className="absolute left-6 top-2 bottom-2 w-px bg-gradient-to-b from-accent/50 via-white/5 to-transparent hidden md:block" />
+        <div className="absolute left-6 md:left-6 top-2 bottom-2 w-px bg-gradient-to-b from-accent/50 via-white/5 to-transparent hidden sm:block" />
 
-        <div className="space-y-6">
+        <div className="space-y-8 md:space-y-6">
           {EXPERIENCES.map((exp, index) => (
             <motion.div
               key={index}
@@ -92,47 +93,52 @@ const Experience = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              className="flex gap-4 md:gap-12 relative group"
+              className="flex flex-col sm:flex-row gap-4 md:gap-12 relative group"
             >
               {/* Timeline Node */}
-              <div className="flex flex-col items-center shrink-0 relative z-10">
+              <div className="flex flex-row sm:flex-col items-center shrink-0 relative z-10">
                 <motion.div
-                  whileHover={{ scale: 1.2 }}
+                  whileHover={{ scale: 1.1 }}
                   className="w-12 h-12 rounded-2xl bg-zinc-950 border border-white/10 flex items-center justify-center shadow-2xl transition-all group-hover:border-accent/50 group-hover:shadow-accent/20 overflow-hidden"
                 >
                   <div className="transition-transform group-hover:rotate-2 w-full h-full flex items-center justify-center">
                     {exp.logo ? (
-                      <img src={exp.logo} alt={exp.company} className="w-full h-full object-cover" />
+                      <img src={getAssetPath(exp.logo)} alt={`${exp.company} Logo - Software Engineering Internship`} className="w-full h-full object-cover" />
                     ) : (
                       exp.icon
                     )}
                   </div>
                 </motion.div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-accent/5 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-accent/5 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity hidden md:block" />
+
+                {/* Mobile specific horizontal line or marker */}
+                <div className="flex-1 h-px bg-white/5 mx-4 sm:hidden" />
               </div>
 
               {/* Experience Card */}
               <div className="flex-1 pb-2">
                 <motion.div
-                  whileHover={{ y: -4 }}
-                  className="glass-card p-4 border-white/5 hover:border-white/10 transition-all relative overflow-hidden group/card"
+                  whileHover={{ y: -2 }}
+                  className="glass-card p-5 md:p-6 border-white/5 hover:border-white/10 transition-all relative overflow-hidden group/card"
                 >
-                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4 relative z-10">
-                    <div>
-                      <div className="flex items-center gap-3 mb-1">
-                        <h3 className="text-xl font-bold text-white">{exp.company}</h3>
-                        <StatusBadge status={exp.status} />
+                  <div className="flex flex-col gap-4 mb-6 relative z-10">
+                    <div className="flex flex-wrap items-center justify-between gap-3">
+                      <div>
+                        <div className="flex items-center gap-3 mb-1">
+                          <h3 className="text-lg md:text-xl font-bold text-white">{exp.company}</h3>
+                          <StatusBadge status={exp.status} />
+                        </div>
+                        <p className="text-xs md:text-sm text-accent font-mono uppercase tracking-widest font-bold">{exp.role}</p>
                       </div>
-                      <p className="text-sm text-accent font-mono uppercase tracking-widest font-bold">{exp.role}</p>
+                      <span className="text-[9px] md:text-[10px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 px-2 py-1 rounded border border-white/5">
+                        {exp.period}
+                      </span>
                     </div>
-                    <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest bg-white/5 px-2 py-1 rounded border border-white/5">
-                      {exp.period}
-                    </span>
                   </div>
 
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 relative z-10">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 relative z-10">
                     <div className="lg:col-span-8">
-                      <ul className="space-y-2">
+                      <ul className="space-y-3">
                         {exp.impact.map((bullet, i) => (
                           <li key={i} className="text-sm text-zinc-500 leading-relaxed relative pl-4 border-l border-white/10 hover:border-accent/50 transition-colors">
                             {bullet}

@@ -1,0 +1,21 @@
+# Shreyash Atre - Software Engineer & Founder
+
+Shreyash Atre is a Software Engineer specializing in full-stack development, scalable systems, and production-grade SaaS. He is a B.Sc. Computer Science student at Sir Parashurambhau College, Pune (Graduating 2027).
+
+## Roles
+- **Software Engineering Intern at Moash**: Engineering Menuara, a multi-tenant restaurant management SaaS.
+- **Founder & Software Developer at Syantrex Technologies**: Building Syantrex ERP, a comprehensive system for retail and attendance management.
+- **App Development Intern at Careasa Healthcare (Past)**: Developed real-time communication infrastructure and secure APIs.
+
+## Key Projects
+- **Menuara**: Multi-tenant SaaS with QR ordering and KDS.
+- **Syantrex ERP**: High-density admin ecosystem for shop management.
+- **DermaScanAI**: AI-based dermatological condition classifier (2nd Prize winner).
+- **GRA – Resilience Agent**: Fault-tolerant AI sustainability platform.
+- **OCR Assistant**: Real-time CV pipeline for document processing.
+
+## Links
+- LinkedIn: https://linkedin.com/in/shreyash-atre-901340317
+- GitHub: https://github.com/shreyash0216
+- Company: https://www.syantrex.online
+- Portfolio: https://shreyash0216.github.io/Shreyash_Portfolio/

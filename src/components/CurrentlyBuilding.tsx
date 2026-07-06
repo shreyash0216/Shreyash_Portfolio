@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink, Layers, Terminal } from "lucide-react";
+import { getAssetPath } from "@/lib/utils";
 
 const PROJECTS = [
   {
@@ -50,10 +51,10 @@ const CurrentlyBuilding = () => {
               <div>
                 <div className="flex items-center gap-3 mb-1">
                   {project.company === 'Moash' && (
-                    <img src="/moash-logo.png" alt="Moash" className="w-5 h-5 rounded-sm object-cover" />
+                    <img src={getAssetPath("moash-logo.png")} alt="Moash - Software Engineering Internship Logo" className="w-5 h-5 rounded-sm object-cover" />
                   )}
                   {project.company === 'Syantrex Technologies' && (
-                    <img src="/syantrex-logo.png" alt="Syantrex" className="w-5 h-5 rounded-sm object-cover bg-white p-0.5" />
+                    <img src={getAssetPath("syantrex-logo.png")} alt="Syantrex Technologies - Founder & Developer Logo" className="w-5 h-5 rounded-sm object-cover bg-white p-0.5" />
                   )}
                   <span className="text-[10px] font-mono font-bold text-accent uppercase tracking-widest">{project.company}</span>
                 </div>
@@ -79,7 +80,14 @@ const CurrentlyBuilding = () => {
                  <Terminal size={14} className="text-accent" /> {project.role}
               </span>
               <div className="ml-auto flex gap-4">
-                 <a href="#" className="text-zinc-500 hover:text-white transition-colors"><ExternalLink size={16} /></a>
+                 <a
+                   href="#"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="text-zinc-500 hover:text-white transition-colors"
+                 >
+                   <ExternalLink size={16} />
+                 </a>
               </div>
             </div>
           </motion.div>
