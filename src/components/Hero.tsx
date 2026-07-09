@@ -16,7 +16,7 @@ const Hero = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                className="text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] font-extrabold tracking-tight leading-[0.85] text-white"
+                className="text-6xl sm:text-7xl md:text-8xl lg:text-[10rem] font-extrabold tracking-tight leading-[0.9] text-white"
               >
                 Software <br />
                 <span className="text-zinc-500">Engineer</span>

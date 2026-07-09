@@ -68,7 +68,7 @@ const SystemDesign = () => {
         </div>
       </div>
 
-      <div ref={containerRef} className="glass-card p-6 md:p-8 overflow-x-auto relative scrollbar-hide">
+      <div ref={containerRef} className="glass-card pt-24 pb-8 px-6 md:px-12 lg:overflow-visible overflow-x-auto relative scrollbar-hide">
         <div className="flex items-center justify-between gap-6 relative lg:h-28 min-w-[900px] lg:min-w-0">
           {NODES.map((node, i) => {
             const isNeighbor = hoveredNode !== null && (hoveredNode === i - 1 || hoveredNode === i + 1);
@@ -84,14 +84,14 @@ const SystemDesign = () => {
               >
                 <motion.div
                   animate={{
-                    scale: isActive ? 1.15 : isNeighbor ? 1.05 : 1,
+                    scale: isActive ? 1.1 : isNeighbor ? 1.05 : 1,
                     opacity: isInactive ? 0.4 : 1,
                     borderColor: isActive ? node.color : isNeighbor ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.05)"
                   }}
                   className="flex flex-col items-center gap-4 cursor-help relative"
                 >
                   <div
-                    className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-black border border-zinc-800 flex items-center justify-center text-white transition-all shadow-2xl relative overflow-visible"
+                    className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-black border border-zinc-800 flex items-center justify-center text-white transition-all shadow-2xl relative"
                     style={{
                       boxShadow: isActive ? `0 0 40px ${node.color}40` : isNeighbor ? `0 0 20px ${node.color}10` : 'none',
                     }}
@@ -104,27 +104,27 @@ const SystemDesign = () => {
                           initial={{ opacity: 0, y: 15, scale: 0.95 }}
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, y: 15, scale: 0.95 }}
-                          className={`absolute z-[100] w-64 p-5 bg-[#09090b]/95 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl pointer-events-none
-                            ${i > NODES.length / 2 ? 'right-0 origin-right' : 'left-0 origin-left'}
-                            top-20
+                          className={`absolute z-[100] w-64 p-5 bg-[#09090b]/98 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] pointer-events-none
+                            ${i > NODES.length / 2 ? '-right-4 lg:-right-4 origin-right' : '-left-4 lg:-left-4 origin-left'}
+                            -top-[155px]
                           `}
                         >
                           <div className="space-y-4 text-left">
                             <div>
-                              <p className="text-[9px] font-mono text-accent uppercase tracking-widest mb-1">Purpose</p>
+                              <p className="text-[9px] font-mono text-accent uppercase tracking-widest mb-1 font-bold">Purpose</p>
                               <p className="text-xs text-white font-bold leading-tight">{node.purpose}</p>
                             </div>
                             <div>
-                              <p className="text-[9px] font-mono text-zinc-500 uppercase tracking-widest mb-1">Intelligence</p>
-                              <p className="text-[11px] text-zinc-400 leading-relaxed">{node.desc}</p>
+                              <p className="text-[9px] font-mono text-zinc-500 uppercase tracking-widest mb-1 font-bold">Intelligence</p>
+                              <p className="text-[11px] text-zinc-300 leading-relaxed font-medium">{node.desc}</p>
                             </div>
-                            <div className="pt-2 flex flex-wrap gap-1.5 border-t border-white/5">
+                            <div className="pt-3 flex flex-wrap gap-1.5 border-t border-white/5">
                               {node.tech.map(t => (
-                                <span key={t} className="px-1.5 py-0.5 bg-white/5 rounded text-[8px] font-mono text-zinc-500">{t}</span>
+                                <span key={t} className="px-2 py-0.5 bg-white/5 border border-white/5 rounded text-[8px] font-mono text-zinc-400">{t}</span>
                               ))}
                             </div>
                           </div>
-                          <div className={`absolute -top-1 w-2 h-2 bg-[#09090b] border-t border-l border-white/10 rotate-45 ${i > NODES.length / 2 ? 'right-6' : 'left-6'}`} />
+                          <div className={`absolute -bottom-1 w-2 h-2 bg-[#09090b] border-b border-r border-white/10 rotate-45 ${i > NODES.length / 2 ? 'right-10' : 'left-10'}`} />
                         </motion.div>
                       )}
                     </AnimatePresence>
@@ -138,7 +138,7 @@ const SystemDesign = () => {
                   <div className="flex items-center justify-center">
                     <motion.div
                       animate={{
-                        opacity: hoveredNode === i || hoveredNode === i + 1 ? 1 : 0.1,
+                        opacity: hoveredNode === i || hoveredNode === i + 1 ? 1 : 0.15,
                         scaleX: hoveredNode === i || hoveredNode === i + 1 ? 1.2 : 1,
                         backgroundColor: hoveredNode === i || hoveredNode === i + 1 ? node.color : "#27272a"
                       }}
@@ -147,9 +147,13 @@ const SystemDesign = () => {
                     <motion.div
                       animate={{
                         x: hoveredNode === i || hoveredNode === i + 1 ? [0, 4, 0] : 0,
-                        color: hoveredNode === i || hoveredNode === i + 1 ? node.color : "#27272a"
+                        color: hoveredNode === i || hoveredNode === i + 1 ? node.color : "#27272a",
+                        opacity: hoveredNode === i || hoveredNode === i + 1 ? 1 : 0.15,
                       }}
-                      transition={{ repeat: hoveredNode === i || hoveredNode === i + 1 ? Infinity : 0, duration: 1.5 }}
+                      transition={{
+                        x: { repeat: hoveredNode === i || hoveredNode === i + 1 ? Infinity : 0, duration: 1.5 },
+                        opacity: { duration: 0.3 }
+                      }}
                       className="-ml-2 transition-colors"
                     >
                       <ArrowRight size={16} />

@@ -48,18 +48,14 @@ const Navbar = () => {
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className={`flex items-center justify-between md:justify-center gap-2 p-1.5 rounded-full border transition-all duration-500 w-full max-w-[400px] md:w-auto ${
-          scrolled || isMobileMenuOpen
-          ? "bg-black/80 backdrop-blur-xl border-white/10 shadow-2xl"
-          : "bg-transparent border-transparent md:bg-black/20 md:backdrop-blur-md md:border-white/5"
-        }`}
+        className={`flex items-center gap-1 p-1.5 rounded-full bg-black/40 backdrop-blur-xl border border-white/5 shadow-2xl transition-all duration-500`}
       >
-        {/* Mobile Logo/Title (Visible only on small screens) */}
+        {/* Mobile Logo (Visible only on small screens) */}
         <div className="md:hidden pl-4 py-2 text-[10px] font-mono font-bold uppercase tracking-widest text-white">
           SA_ENGINEER
         </div>
 
-        {/* Desktop Links */}
+        {/* Desktop Links - Flattened sibling structure */}
         <div className="hidden md:flex items-center gap-1">
           {navItems.map((item) => {
             const id = item.toLowerCase() === "stack" ? "skills" : item.toLowerCase();
@@ -69,15 +65,16 @@ const Navbar = () => {
               <button
                 key={item}
                 onClick={() => scrollTo(id)}
-                className={`px-5 py-2 text-[10px] font-mono uppercase tracking-[0.2em] transition-colors relative ${
+                className={`px-5 py-2 text-[10px] font-mono uppercase tracking-[0.2em] transition-colors relative rounded-full ${
                   isActive ? "text-white" : "text-zinc-500 hover:text-white"
                 }`}
               >
-                {item}
+                <span className="relative z-10">{item}</span>
                 {isActive && (
                   <motion.div
                     layoutId="activeNav"
-                    className="absolute inset-0 bg-white/5 rounded-full z-[-1]"
+                    className="absolute inset-0 bg-white/5 rounded-full"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
               </button>
