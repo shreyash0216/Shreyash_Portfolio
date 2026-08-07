@@ -32,8 +32,8 @@ const About = () => {
             <div className="p-5 md:p-6 glass-card border-white/5 flex items-start gap-4 hover:bg-white/[0.02] transition-colors">
               <div className="p-3 bg-accent/10 rounded-xl text-accent"><Code2 size={20} /></div>
               <div>
-                <h4 className="text-sm font-bold text-zinc-300 uppercase tracking-widest mb-1">Dual Identity</h4>
-                <p className="text-xs text-zinc-500 leading-relaxed">Intern at Moash & Founder at Syantrex Technologies.</p>
+                <h4 className="text-sm font-bold text-zinc-300 uppercase tracking-widest mb-1">Current Role</h4>
+                <p className="text-xs text-zinc-500 leading-relaxed">Founder & Lead Engineer at Syantrex Technologies.</p>
               </div>
             </div>
             <div className="p-5 md:p-6 glass-card border-white/5 flex items-start gap-4 hover:bg-white/[0.02] transition-colors">

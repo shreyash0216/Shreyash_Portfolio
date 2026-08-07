@@ -6,20 +6,11 @@ import { getAssetPath } from "@/lib/utils";
 
 const PROJECTS = [
   {
-    title: "Menuara",
-    company: "Moash",
-    role: "Web & Software Intern",
-    desc: "A high-performance SaaS platform for restaurant logistics and QR-based ordering systems.",
-    stack: ["Next.js", "TypeScript", "Tailwind", "Production"],
-    status: "Since June 2026",
-    accent: "#0070f3"
-  },
-  {
     title: "Syantrex ERP",
     company: "Syantrex Technologies",
-    role: "Founder & Lead",
-    desc: "A comprehensive multi-tenant ERP system for enterprise resource planning and management.",
-    stack: ["Node.js", "PostgreSQL", "Next.js", "Cloud"],
+    role: "Founder & Lead Architect",
+    desc: "Enterprise POS & ERP platform for electronics retailers with IMEI lifecycle tracking, custom Reverse-GST engine, and sub-100ms transaction speeds.",
+    stack: ["Flutter", "NestJS", "Prisma", "PostgreSQL 16", "Docker", "DigitalOcean"],
     status: "Since June 2026",
     accent: "#9333ea"
   }
@@ -33,7 +24,7 @@ const CurrentlyBuilding = () => {
         <div className="h-px flex-1 bg-white/5"></div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 gap-6">
         {PROJECTS.map((project, i) => (
           <motion.div
             key={i}
@@ -50,9 +41,6 @@ const CurrentlyBuilding = () => {
             <div className="flex justify-between items-start mb-4">
               <div>
                 <div className="flex items-center gap-3 mb-1">
-                  {project.company === 'Moash' && (
-                    <img src={getAssetPath("moash-logo.png")} alt="Moash - Software Engineering Internship Logo" className="w-5 h-5 rounded-sm object-cover" />
-                  )}
                   {project.company === 'Syantrex Technologies' && (
                     <img src={getAssetPath("syantrex-logo.png")} alt="Syantrex Technologies - Founder & Developer Logo" className="w-5 h-5 rounded-sm object-cover bg-white p-0.5" />
                   )}
@@ -65,7 +53,7 @@ const CurrentlyBuilding = () => {
               </div>
             </div>
 
-            <p className="text-zinc-500 text-sm leading-relaxed mb-6 max-w-sm">
+            <p className="text-zinc-500 text-sm leading-relaxed mb-6 max-w-xl">
               {project.desc}
             </p>
 

@@ -17,29 +17,16 @@ interface ExperienceItem {
 
 const EXPERIENCES: ExperienceItem[] = [
   {
-    company: "Moash",
-    role: "Web & Software Development Intern",
-    period: "June 2026 - Present",
-    status: "current",
-    impact: [
-      "Engineered high-performance SaaS features for Menuara, reducing latency by 30%.",
-      "Architected responsive, real-time dashboards using Next.js 14 and state management.",
-      "Collaborated on production-level deployments, ensuring 99.9% system availability.",
-    ],
-    tech: ["Next.js 14", "TypeScript", "Tailwind", "REST APIs"],
-    logo: "moash-logo.png"
-  },
-  {
     company: "Syantrex Technologies",
-    role: "Founder & Software Developer",
+    role: "Founder & Lead Architect",
     period: "June 2026 - Present",
     status: "founder",
     impact: [
-      "Built multi-tenant Syantrex ERP from zero to production, serving live enterprise clients.",
-      "Optimized PostgreSQL schema performance, improving query speeds by 40% for large data sets.",
-      "Automated deployment pipelines and cloud infrastructure management for scalable delivery.",
+      "Architected multi-tenant POS & ERP platform on Flutter, NestJS & PostgreSQL 16 delivering sub-100ms speeds.",
+      "Engineered unit-level IMEI lifecycle tracking, custom Reverse-GST calculation engine, and zero-collision checkouts.",
+      "Implemented hardware-backed encrypted sessions, 30s inactivity PIN overlay, and Dockerized DigitalOcean deployment.",
     ],
-    tech: ["Product Ownership", "Architecture", "Backend", "Cloud Deploy"],
+    tech: ["Flutter", "NestJS", "Prisma", "PostgreSQL 16", "Docker", "DigitalOcean"],
     logo: "syantrex-logo.png"
   },
   {

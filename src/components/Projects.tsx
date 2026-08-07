@@ -6,18 +6,6 @@ import { getAssetPath } from "@/lib/utils";
 
 const PROJECTS = [
   {
-    title: "Menuara",
-    style: "saas",
-    desc: "A multi-tenant restaurant management ecosystem. Built with Next.js 14 and Supabase, it handles complex orders, QR menus, and real-time kitchen displays.",
-    problem: "Restaurant owners struggle with disconnected systems for menus, billing, and inventory.",
-    role: "Founder & Lead Developer",
-    arch: "Multi-tenant SaaS",
-    tech: ["Next.js", "Supabase", "TypeScript", "Vercel"],
-    links: { demo: "https://www.moash.co.in/?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGnFJYRUAnFZlKy58zwFrAHOYL-sdZkpVb9TMDmFqncCZ6YcXyOG9giaRZbCUA_aem_v4jHb9GeD6r0rMDeZt463w" },
-    accent: "#0070f3",
-    logo: "moash-logo.png"
-  },
-  {
     title: "Careasa CRM",
     style: "healthcare",
     desc: "A scalable healthcare backend system with secure data workflows, JWT authentication, and real-time communication integration.",
@@ -32,11 +20,11 @@ const PROJECTS = [
   {
     title: "Syantrex ERP",
     style: "enterprise",
-    desc: "The given software is currently building for System ERP for Shops and all for managing stocks, attendance management and billing.",
-    problem: "Managing multiple ERP clients manually is error-prone and non-scalable.",
-    role: "Architect & Developer",
-    arch: "Admin Ecosystem",
-    tech: ["Next.js", "PostgreSQL", "Tailwind", "Node.js"],
+    desc: "Enterprise POS & ERP platform for electronics retailers. Features unit-level IMEI tracking, GST PDF billing, custom Reverse-GST engine, and sub-100ms speeds.",
+    problem: "Electronics retailers face IMEI tracking gaps, GST ledger rounding drift, and transaction collisions during high-volume checkouts.",
+    role: "Founder & Lead Architect",
+    arch: "Multi-Tenant POS & ERP",
+    tech: ["Flutter", "NestJS", "Prisma", "PostgreSQL 16", "Docker", "DigitalOcean"],
     links: { demo: "https://www.syantrex.online" },
     accent: "#9333ea",
     logo: "syantrex-logo.png"

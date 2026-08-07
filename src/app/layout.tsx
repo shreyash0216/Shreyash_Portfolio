@@ -15,7 +15,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Shreyash Atre | Software Engineer & Founder, Syantrex Technologies",
   description: "Shreyash Atre — Software Engineer, B.Sc. Computer Science student at SPPC Pune, and Founder of Syantrex Technologies. Portfolio featuring full-stack, AI, and ERP systems.",
-  keywords: ["Shreyash Atre", "Software Engineer", "Full Stack Developer", "Syantrex Technologies", "Menuara", "SaaS Founder", "SPPC Pune"],
+  keywords: ["Shreyash Atre", "Software Engineer", "Full Stack Developer", "Syantrex Technologies", "SaaS Founder", "SPC Pune"],
   alternates: {
     canonical: "https://shreyash0216.github.io/Shreyash_Portfolio/",
   },
@@ -55,10 +55,6 @@ export default function RootLayout({
     "url": "https://shreyash0216.github.io/Shreyash_Portfolio/",
     "jobTitle": "Software Engineer",
     "worksFor": [
-      {
-        "@type": "Organization",
-        "name": "Moash"
-      },
       {
         "@type": "Organization",
         "name": "Syantrex Technologies",

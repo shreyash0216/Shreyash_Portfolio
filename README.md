@@ -12,13 +12,13 @@ A high-performance, production-grade engineering portfolio built with **Next.js 
 - **Architecture:** Distributed Systems Design, Multi-tenant SaaS logic
 - **Styling:** Tailwind CSS, Framer Motion (60FPS Interactions)
 - **Infrastructure:** AWS (S3/RDS), Supabase, Node.js, PostgreSQL
-- **Experience:** Founder @ Syantrex Technologies | Intern @ Moash & Careasa
+- **Experience:** Founder @ Syantrex Technologies | Intern @ Careasa
 
 ## 🏛 Key Engineering Modules
 
 - **Live Engineering Dashboard:** Real-time system monitoring and technical metadata.
 - **System Architecture Visualizer:** Interactive flow tracing requests from Flutter clients to AWS infrastructure.
-- **Project Case Studies:** High-density technical breakdowns of Menuara (SaaS) and DermaScanAI (AI).
+- **Project Case Studies:** High-density technical breakdowns of Syantrex ERP (SaaS) and DermaScanAI (AI).
 - **Engineering Principles:** A deep-dive into reliability, performance, and scalable abstractions.
 
 ## 📁 Project Structure
