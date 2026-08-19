@@ -114,7 +114,7 @@ const Hero = () => {
               />
 
               <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8 z-20 p-5 md:p-6 bg-black/40 backdrop-blur-md border border-white/10 rounded-[1.5rem] md:rounded-[2rem]">
-                <p className="text-[9px] md:text-[10px] font-mono text-accent uppercase tracking-[0.2em] mb-1 md:mb-2 font-bold">Software Engineer</p>
+                <p className="text-[9px] md:text-[10px] font-mono text-accent uppercase tracking-[0.2em] mb-1 md:mb-2 font-bold">Software Engineering Intern</p>
                 <p className="text-xs md:text-sm text-zinc-300 font-medium leading-relaxed">
                   Founder at Syantrex Technologies. Building the future of SaaS.
                 </p>

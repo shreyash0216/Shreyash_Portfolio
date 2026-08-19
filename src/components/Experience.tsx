@@ -18,28 +18,40 @@ interface ExperienceItem {
 const EXPERIENCES: ExperienceItem[] = [
   {
     company: "Syantrex Technologies",
-    role: "Founder & Lead Architect",
-    period: "June 2026 - Present",
+    role: "Founder & Lead Engineer",
+    period: "Jun 2026 - Present",
     status: "founder",
     impact: [
-      "Architected multi-tenant POS & ERP platform on Flutter, NestJS & PostgreSQL 16 delivering sub-100ms speeds.",
-      "Engineered unit-level IMEI lifecycle tracking, custom Reverse-GST calculation engine, and zero-collision checkouts.",
-      "Implemented hardware-backed encrypted sessions, 30s inactivity PIN overlay, and Dockerized DigitalOcean deployment.",
+      "Architected a multi-tenant SaaS ERP (NestJS, PostgreSQL, React, WebSockets) with Role-Based Access Control, serving live retail clients.",
+      "Engineered an offline-first Mobile Shop Management app in Flutter featuring real-time inventory tracking and client-side PDF invoice generation.",
+      "Managed cloud deployments, database schema migrations, and CI/CD pipelines for production Android builds.",
     ],
-    tech: ["Flutter", "NestJS", "Prisma", "PostgreSQL 16", "Docker", "DigitalOcean"],
+    tech: ["NestJS", "PostgreSQL", "React", "WebSockets", "Flutter", "Docker"],
     logo: "syantrex-logo.png"
+  },
+  {
+    company: "IBM SkillsBuild × AICTE",
+    role: "AI Automation Intern",
+    period: "Jun 2026 - Jul 2026",
+    status: "completed",
+    impact: [
+      "Completed a 6-week intensive engineering program on AI automation pipelines, intelligent system integration, and workflow orchestration.",
+      "Earned certification with Credential ID: BHIBMAC01877 through Bharat Cares partnership.",
+    ],
+    tech: ["AI/ML", "Automation", "System Integration", "Workflow Orchestration"],
+    icon: <Cpu size={24} className="text-blue-400" />
   },
   {
     company: "Careasa Healthcare",
     role: "App Development Intern",
-    period: "Dec 2025 - June 2026",
+    period: "Dec 2025 - Jun 2026",
     status: "completed",
     impact: [
-      "Designed secure RESTful APIs with Node.js/Express and JWT, handling 1k+ daily requests.",
-      "Integrated real-time video/audio infrastructure using Agora SDK for healthcare delivery.",
-      "Synchronized AWS S3 and RDS models, resolving cross-platform data alignment issues.",
+      "Built 15+ production REST APIs using Node.js/Express.js with JWT authentication and structured validation layers.",
+      "Synchronized AWS RDS models and S3 storage, achieving 99%+ cross-platform data reliability across web/mobile.",
+      "Integrated Agora SDK for low-latency real-time video communication and managed 15+ APK/IPA release cycles.",
     ],
-    tech: ["Node.js", "JWT", "AWS S3/RDS", "Agora", "Flutter"],
+    tech: ["Node.js", "Express.js", "JWT", "AWS S3/RDS", "Agora SDK", "Flutter"],
     logo: "careasa-logo.png"
   },
 ];

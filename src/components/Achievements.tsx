@@ -6,32 +6,39 @@ import { getAssetPath } from "@/lib/utils";
 
 const ACHIEVEMENTS = [
   {
-    title: "2nd Prize, College Technical Competition",
+    title: "2nd Prize, SP College Science Exhibition 2026",
     org: "DermaScanAI Backend Lead",
     date: "FEB 2026",
     icon: <Trophy className="text-yellow-500" size={20} />,
-    desc: "Architected the winning backend system for an AI-based dermatological condition classifier."
+    desc: "Architected the winning backend system for an AI-based dermatological condition classifier, competing against 10+ teams."
+  },
+  {
+    title: "Oracle Cloud Infrastructure: Generative AI Professional",
+    org: "ORACLE CLOUD INFRASTRUCTURE",
+    date: "FEB 2026",
+    icon: <ShieldCheck className="text-green-500" size={20} />,
+    desc: "Certified expertise in building and deploying LLM-based solutions on enterprise cloud infra."
   },
   {
     title: "AWS ImpactX Hackathon Participant",
-    org: "IIT BOMBAY | TEAM COSMOS",
+    org: "IIT BOMBAY (TECHFEST 2025)",
     date: "DEC 2025",
     icon: <Award className="text-accent" size={20} />,
     desc: "Developed a fault-tolerant AI sustainability platform using Gemini API and offline fallback engines."
   },
   {
-    title: "OCI Generative AI Professional",
-    org: "ORACLE CLOUD INFRASTRUCTURE",
-    date: "2025",
-    icon: <ShieldCheck className="text-green-500" size={20} />,
-    desc: "Certified expertise in building and deploying LLM-based solutions on enterprise cloud infra."
-  },
-  {
     title: "Fundamentals of Docker & Kubernetes",
-    org: "SCALAR",
-    date: "2025",
+    org: "SCALER",
+    date: "DEC 2025",
     icon: <ShieldCheck className="text-blue-500" size={20} />,
     desc: "Mastered container orchestration and microservices deployment strategies."
+  },
+  {
+    title: "SPPU Inter-College CS Quiz: Top 9 Rank",
+    org: "SAVITRIBAI PHULE PUNE UNIVERSITY",
+    date: "2025",
+    icon: <Star className="text-purple-400" size={20} />,
+    desc: "Ranked in the Top 9 across DSA, OS, DBMS, CN, and AI/ML domains in the inter-college CS quiz."
   }
 ];
 

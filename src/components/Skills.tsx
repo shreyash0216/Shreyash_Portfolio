@@ -5,40 +5,40 @@ import { Server, Layout, Cloud, Settings, Brain, Smartphone, Code2, Database } f
 
 const SKILL_CATEGORIES = [
   {
-    title: "Backend Systems",
-    icon: <Server size={20} />,
-    skills: ["Node.js", "Express.js", "RESTful APIs", "JWT Auth", "Redis"],
-    color: "#0070f3"
-  },
-  {
-    title: "Cloud & DevOps",
-    icon: <Cloud size={20} />,
-    skills: ["AWS (S3/RDS)", "Docker", "Kubernetes", "OCI", "CI/CD"],
-    color: "#f59e0b"
-  },
-  {
-    title: "AI Integration",
-    icon: <Brain size={20} />,
-    skills: ["Gemini API", "TensorFlow", "YOLOv3", "Tesseract", "OpenCV"],
-    color: "#10b981"
-  },
-  {
     title: "Languages",
     icon: <Code2 size={20} />,
-    skills: ["Java", "TypeScript", "Python", "C++", "SQL", "Dart"],
+    skills: ["Java", "JavaScript (ES6+)", "TypeScript", "Python", "SQL", "C++", "Dart"],
     color: "#9333ea"
   },
   {
-    title: "Mobile / Frontend",
+    title: "Backend & Cloud",
+    icon: <Server size={20} />,
+    skills: ["Node.js", "Express.js", "NestJS", "FastAPI", "REST APIs", "JWT", "Redis", "PostgreSQL", "AWS (S3/RDS/App Runner)", "Docker"],
+    color: "#0070f3"
+  },
+  {
+    title: "Frontend & Mobile",
     icon: <Smartphone size={20} />,
-    skills: ["Flutter", "React", "Next.js", "TailwindCSS", "Dart"],
+    skills: ["Next.js", "React", "TypeScript", "TailwindCSS", "Flutter"],
     color: "#ef4444"
+  },
+  {
+    title: "Tools & Frameworks",
+    icon: <Settings size={20} />,
+    skills: ["Postman", "WebSockets", "Agora SDK", "TensorFlow", "Git/GitHub", "Linux"],
+    color: "#f59e0b"
   },
   {
     title: "Databases",
     icon: <Database size={20} />,
-    skills: ["PostgreSQL", "MongoDB", "Redis", "Supabase"],
+    skills: ["PostgreSQL", "Redis", "AWS RDS", "Supabase"],
     color: "#3b82f6"
+  },
+  {
+    title: "AI & ML",
+    icon: <Brain size={20} />,
+    skills: ["TensorFlow", "Gemini API", "YOLOv3", "Tesseract", "OpenCV"],
+    color: "#10b981"
   }
 ];
 
