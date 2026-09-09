@@ -13,15 +13,27 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Shreyash Atre | Software Engineer & Founder, Syantrex Technologies",
-  description: "Shreyash Atre — Software Engineer, B.Sc. Computer Science student at SPPC Pune, and Founder of Syantrex Technologies. Portfolio featuring full-stack, AI, and ERP systems.",
-  keywords: ["Shreyash Atre", "Software Engineer", "Full Stack Developer", "Syantrex Technologies", "SaaS Founder", "SPC Pune"],
+  title: "Shreyash Atre | Full-Stack Developer (Node.js, NestJS, React, PostgreSQL)",
+  description: "Final-year B.Sc. Computer Science student (CGPA 8.68) shipping production full-stack systems solo (Node.js/NestJS, React, PostgreSQL). Independent Project Lead at Syantrex. Available immediately in Pune.",
+  keywords: [
+    "Shreyash Atre",
+    "Full-Stack Developer",
+    "Software Engineer",
+    "Node.js",
+    "NestJS",
+    "React",
+    "PostgreSQL",
+    "REST APIs",
+    "Syantrex ERP",
+    "Pune",
+    "Sir Parashurambhau College"
+  ],
   alternates: {
     canonical: "https://shreyash0216.github.io/Shreyash_Portfolio/",
   },
   openGraph: {
-    title: "Shreyash Atre | Software Engineer",
-    description: "Full-stack developer and founder building AI-driven software and ERP systems.",
+    title: "Shreyash Atre | Full-Stack Developer",
+    description: "Final-year B.Sc. CS student (CGPA 8.68) shipping production full-stack systems solo. Node.js/NestJS, React, PostgreSQL, REST APIs.",
     url: "https://shreyash0216.github.io/Shreyash_Portfolio/",
     siteName: "Shreyash Atre Portfolio",
     images: [
@@ -29,7 +41,7 @@ export const metadata: Metadata = {
         url: "https://shreyash0216.github.io/Shreyash_Portfolio/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Shreyash Atre - Software Engineer",
+        alt: "Shreyash Atre - Full-Stack Developer",
       },
     ],
     locale: "en_US",
@@ -37,8 +49,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shreyash Atre | Software Engineer",
-    description: "Full-stack developer and founder building AI-driven software and ERP systems.",
+    title: "Shreyash Atre | Full-Stack Developer",
+    description: "Final-year B.Sc. CS student shipping production full-stack systems solo (Node.js/NestJS, React, PostgreSQL).",
     images: ["https://shreyash0216.github.io/Shreyash_Portfolio/og-image.png"],
   },
 };
@@ -53,11 +65,11 @@ export default function RootLayout({
     "@type": "Person",
     "name": "Shreyash Atre",
     "url": "https://shreyash0216.github.io/Shreyash_Portfolio/",
-    "jobTitle": "Software Engineer",
+    "jobTitle": "Full-Stack Developer",
     "worksFor": [
       {
         "@type": "Organization",
-        "name": "Syantrex Technologies",
+        "name": "Syantrex",
         "url": "https://www.syantrex.online"
       }
     ],
@@ -67,7 +79,8 @@ export default function RootLayout({
     },
     "sameAs": [
       "https://linkedin.com/in/shreyash-atre-901340317",
-      "https://github.com/shreyash0216"
+      "https://github.com/shreyash0216",
+      "https://x.com/atre_shreyash"
     ]
   };
 

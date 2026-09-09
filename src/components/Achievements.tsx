@@ -6,39 +6,53 @@ import { getAssetPath } from "@/lib/utils";
 
 const ACHIEVEMENTS = [
   {
-    title: "2nd Prize, SP College Science Exhibition 2026",
-    org: "DermaScanAI Backend Lead",
+    title: "2nd Prize Winner — SP College Science Exhibition 2026",
+    org: "SP College, Pune (DermaScanAI)",
     date: "FEB 2026",
     icon: <Trophy className="text-yellow-500" size={20} />,
-    desc: "Architected the winning backend system for an AI-based dermatological condition classifier, competing against 10+ teams."
+    desc: "Built and presented a working AI skin condition detection product end-to-end against 10+ competing collegiate teams."
   },
   {
-    title: "Oracle Cloud Infrastructure: Generative AI Professional",
-    org: "ORACLE CLOUD INFRASTRUCTURE",
-    date: "FEB 2026",
-    icon: <ShieldCheck className="text-green-500" size={20} />,
-    desc: "Certified expertise in building and deploying LLM-based solutions on enterprise cloud infra."
-  },
-  {
-    title: "AWS ImpactX Hackathon Participant",
-    org: "IIT BOMBAY (TECHFEST 2025)",
-    date: "DEC 2025",
+    title: "Certificate of Excellence, DevOps Workshop",
+    org: "SPPU ACM Student Chapter",
+    date: "SEP 2026",
     icon: <Award className="text-accent" size={20} />,
-    desc: "Developed a fault-tolerant AI sustainability platform using Gemini API and offline fallback engines."
+    desc: "Demonstrated excellence in DevOps culture, automation workflows, containerization lifecycle, and CI/CD deployment pipelines."
   },
   {
-    title: "Fundamentals of Docker & Kubernetes",
-    org: "SCALER",
+    title: "AWS ImpactX Challenge — National Participant",
+    org: "IIT Bombay Techfest 2025 (Team COSMOS)",
     date: "DEC 2025",
-    icon: <ShieldCheck className="text-blue-500" size={20} />,
-    desc: "Mastered container orchestration and microservices deployment strategies."
+    icon: <Award className="text-cyan-400" size={20} />,
+    desc: "Executed full React rewrite of an ML-powered frontend (10 crop varieties) preserving the prediction engine and Gemini API integration within a fixed hackathon timeline."
   },
   {
     title: "SPPU Inter-College CS Quiz: Top 9 Rank",
-    org: "SAVITRIBAI PHULE PUNE UNIVERSITY",
+    org: "Savitribai Phule Pune University",
     date: "2025",
     icon: <Star className="text-purple-400" size={20} />,
-    desc: "Ranked in the Top 9 across DSA, OS, DBMS, CN, and AI/ML domains in the inter-college CS quiz."
+    desc: "Achieved Top 9 rank across DSA, DBMS, Operating Systems, Computer Networks, and AI/ML domains in university-wide competition."
+  },
+  {
+    title: "IBM SkillsBuild × AICTE — AI Automation & Intelligent Solutions",
+    org: "IBM SkillsBuild × AICTE (Bharat Cares)",
+    date: "JUL 2026",
+    icon: <ShieldCheck className="text-emerald-400" size={20} />,
+    desc: "Credential ID: BHIBMAC01877 — Completed a 6-week intensive program on automation pipelines and workflow orchestration."
+  },
+  {
+    title: "Oracle Cloud Infrastructure — Generative AI Professional",
+    org: "Oracle Cloud Infrastructure",
+    date: "FEB 2026",
+    icon: <ShieldCheck className="text-green-500" size={20} />,
+    desc: "Certified expertise in architecting and deploying LLM/GenAI solutions and enterprise AI inference workloads."
+  },
+  {
+    title: "Fundamentals of Docker & Kubernetes",
+    org: "Scaler",
+    date: "DEC 2025",
+    icon: <ShieldCheck className="text-blue-500" size={20} />,
+    desc: "Mastered containerization, microservices deployment strategies, Docker multi-stage builds, and orchestration."
   }
 ];
 
@@ -61,8 +75,10 @@ const Achievements = () => {
           >
             <div className="flex flex-col items-center">
               <div className="w-12 h-12 rounded-2xl bg-zinc-950 border border-white/10 flex items-center justify-center shrink-0 shadow-2xl z-10 overflow-hidden">
-                {ach.org === 'DermaScanAI Backend Lead' ? (
+                {ach.org.includes('DermaScanAI') ? (
                   <img src={getAssetPath("dermascan-logo.png")} alt="DermaScanAI" className="w-full h-full object-cover" />
+                ) : ach.org.includes('IBM') ? (
+                  <img src={getAssetPath("IBM_LOGO.png")} alt="IBM SkillsBuild" className="w-full h-full object-contain p-2 bg-white" />
                 ) : (
                   ach.icon
                 )}

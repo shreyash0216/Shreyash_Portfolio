@@ -26,9 +26,9 @@ const Hero = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
-                className="text-zinc-500 max-w-2xl text-lg md:text-xl font-medium leading-relaxed"
+                className="text-zinc-400 max-w-2xl text-lg md:text-xl font-medium leading-relaxed"
               >
-                Building scalable backend systems, AI-powered applications, and modern SaaS products with a focus on high availability.
+                Full-Stack Developer building robust backend systems, REST APIs, and production SaaS platforms. Shipped full-stack systems solo with live daily users.
               </motion.p>
             </div>
 
@@ -41,12 +41,12 @@ const Hero = () => {
             >
               {[
                 { label: "Location", value: "Pune, IN", icon: <Globe size={14} /> },
-                { label: "Uptime", value: "4+ Years", icon: <Activity size={14} /> },
-                { label: "Core Stack", value: "Node/AWS", icon: <Cpu size={14} /> },
-                { label: "Focus", value: "Fullstack / SWE", icon: <Terminal size={14} /> },
+                { label: "Academics", value: "8.68 CGPA", icon: <Activity size={14} /> },
+                { label: "Core Stack", value: "NestJS / React / PG", icon: <Cpu size={14} /> },
+                { label: "Focus", value: "Backend & Systems", icon: <Terminal size={14} /> },
               ].map((stat, i) => (
                 <div key={i} className="p-3 md:p-4 bg-white/[0.02] border border-white/5 rounded-xl hover:bg-white/[0.04] transition-all hover:border-white/10 group cursor-default">
-                  <div className="flex items-center gap-2 text-zinc-600 mb-2 group-hover:text-accent transition-colors">
+                  <div className="flex items-center gap-2 text-zinc-500 mb-2 group-hover:text-accent transition-colors">
                     {stat.icon} <span className="text-[9px] md:text-[10px] font-mono uppercase tracking-widest">{stat.label}</span>
                   </div>
                   <div className="text-xs md:text-sm font-mono text-zinc-300 font-bold tracking-tight">{stat.value}</div>
@@ -114,9 +114,9 @@ const Hero = () => {
               />
 
               <div className="absolute bottom-6 left-6 right-6 md:bottom-8 md:left-8 md:right-8 z-20 p-5 md:p-6 bg-black/40 backdrop-blur-md border border-white/10 rounded-[1.5rem] md:rounded-[2rem]">
-                <p className="text-[9px] md:text-[10px] font-mono text-accent uppercase tracking-[0.2em] mb-1 md:mb-2 font-bold">Software Engineering Intern</p>
+                <p className="text-[9px] md:text-[10px] font-mono text-accent uppercase tracking-[0.2em] mb-1 md:mb-2 font-bold">Full-Stack Developer</p>
                 <p className="text-xs md:text-sm text-zinc-300 font-medium leading-relaxed">
-                  Founder at Syantrex Technologies. Building the future of SaaS.
+                  Independent Project Lead at Syantrex. Shipped production retail SaaS solo.
                 </p>
               </div>
             </div>

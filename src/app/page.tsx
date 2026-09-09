@@ -9,14 +9,13 @@ import EngineeringPrinciples from "@/components/EngineeringPrinciples";
 import Achievements from "@/components/Achievements";
 import Contact from "@/components/Contact";
 import Navbar from "@/components/Navbar";
-import { ScrollProgress, CursorGlow, CommandBar } from "@/components/PremiumDetails";
+import { ScrollProgress, CursorGlow } from "@/components/PremiumDetails";
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-background text-foreground selection:bg-accent/30 selection:text-accent">
       <ScrollProgress />
       <CursorGlow />
-      <CommandBar />
       <Navbar />
       <Hero />
       <div className="max-w-7xl mx-auto px-6 space-y-20 pb-24">

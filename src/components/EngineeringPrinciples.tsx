@@ -5,23 +5,23 @@ import { Shield, Zap, Layers, RefreshCw } from "lucide-react";
 
 const PRINCIPLES = [
   {
-    title: "Reliability over Hype",
-    desc: "Architecting systems that prioritize data integrity and uptime using battle-tested paradigms like clean architecture and rigorous validation.",
+    title: "Build It Clearly",
+    desc: "Architecting modular, maintainable systems with clean REST API design, strict RBAC, and explicit data contracts that prevent tech debt.",
     icon: <Shield size={20} className="text-blue-400" />
   },
   {
-    title: "Performance First",
-    desc: "Every millisecond counts. Optimization isn't an afterthought; it's a core design principle from database indexing to frontend rendering.",
-    icon: <Zap size={20} className="text-yellow-400" />
-  },
-  {
-    title: "Scalable Abstractions",
-    desc: "Building for today with an eye on tomorrow. Designing modular, multi-tenant architectures that can grow without technical debt.",
+    title: "Understand It Deeply",
+    desc: "Full-stack system comprehension — from PostgreSQL schema migrations and environment config to client state and network serialization.",
     icon: <Layers size={20} className="text-purple-400" />
   },
   {
-    title: "Iterative Refinement",
-    desc: "Software is never finished. Constant auditing, refactoring, and CI/CD automation ensure the codebase remains elite.",
+    title: "Optimize When It Matters",
+    desc: "Targeting high-impact bottlenecks: sub-100ms API responses, database indexing, and memory/OOM prevention rather than premature abstractions.",
+    icon: <Zap size={20} className="text-yellow-400" />
+  },
+  {
+    title: "Resilience & Rigorous QA",
+    desc: "End-to-end API validation with Postman, structured pre-launch testing, and dual staging/fallback deployments (DigitalOcean + Render).",
     icon: <RefreshCw size={20} className="text-green-400" />
   }
 ];
@@ -29,9 +29,14 @@ const PRINCIPLES = [
 const EngineeringPrinciples = () => {
   return (
     <section className="scroll-mt-32">
-       <div className="flex items-center gap-4 mb-8">
-        <h2 className="text-3xl font-bold">Engineering Principles</h2>
-        <div className="h-px flex-1 bg-white/5"></div>
+       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
+        <div>
+          <h2 className="text-3xl font-bold">Engineering Principles</h2>
+          <p className="text-zinc-500 font-mono text-xs uppercase tracking-widest mt-1">/ Architecture & Standards</p>
+        </div>
+        <div className="text-xs font-mono text-zinc-400 bg-white/5 border border-white/5 px-4 py-2 rounded-xl">
+          &ldquo;Build it clearly, understand it deeply, and optimize it when it matters.&rdquo;
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

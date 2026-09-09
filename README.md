@@ -8,18 +8,22 @@ A high-performance, production-grade engineering portfolio built with **Next.js 
 
 ## 🛠 Technical Ecosystem
 
-- **Core:** Next.js 15 (App Router), React 19 RC, TypeScript (Strict)
-- **Architecture:** Distributed Systems Design, Multi-tenant SaaS logic
-- **Styling:** Tailwind CSS, Framer Motion (60FPS Interactions)
-- **Infrastructure:** AWS (S3/RDS), Supabase, Node.js, PostgreSQL
-- **Experience:** Founder @ Syantrex Technologies | Intern @ Careasa
+- **Core:** Next.js 15 (App Router), React 19, TypeScript (Strict)
+- **Primary Backend Stack:** Node.js, NestJS, Express.js, PostgreSQL, REST API Architecture, JWT/bcrypt, RBAC, Socket.IO
+- **Styling & Motion:** Tailwind CSS, Framer Motion (60FPS Interactions)
+- **Infrastructure & Deployments:** DigitalOcean, Render.com, Docker, Supabase, Linux, Postman
+- **Experience:**
+  - **Independent Project Lead — Full-Stack Development** @ Syantrex (Pre-Registration)
+  - **Web & Software Development Intern** @ Moash
+  - **App Development Intern** @ Careasa Healthcare
+  - **AI Automation Intern** @ IBM SkillsBuild × AICTE (Credential ID: BHIBMAC01877)
 
 ## 🏛 Key Engineering Modules
 
-- **Live Engineering Dashboard:** Real-time system monitoring and technical metadata.
-- **System Architecture Visualizer:** Interactive flow tracing requests from Flutter clients to AWS infrastructure.
-- **Project Case Studies:** High-density technical breakdowns of Syantrex ERP (SaaS) and DermaScanAI (AI).
-- **Engineering Principles:** A deep-dive into reliability, performance, and scalable abstractions.
+- **Live Engineering Dashboard:** Real-time system monitoring, academic credentials (8.68 CGPA), and technical metadata.
+- **System Architecture Visualizer:** Interactive flow tracing requests through React client UI, REST APIs, NestJS engine, PostgreSQL/Supabase, and DigitalOcean/Render droplets.
+- **Project Case Studies:** Production breakdown of Syantrex ERP (SaaS), DermaScanAI (2nd Prize AI), GRA (AWS ImpactX Challenge), and Careasa Healthcare APIs.
+- **Engineering Principles:** Philosophy-driven development: *"Build it clearly, understand it deeply, and optimize it when it matters."*
 
 ## 📁 Project Structure
 

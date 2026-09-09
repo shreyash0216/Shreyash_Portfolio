@@ -5,40 +5,40 @@ import { Server, Layout, Cloud, Settings, Brain, Smartphone, Code2, Database } f
 
 const SKILL_CATEGORIES = [
   {
-    title: "Languages",
-    icon: <Code2 size={20} />,
-    skills: ["Java", "JavaScript (ES6+)", "TypeScript", "Python", "SQL", "C++", "Dart"],
-    color: "#9333ea"
-  },
-  {
-    title: "Backend & Cloud",
+    title: "Backend & Systems",
     icon: <Server size={20} />,
-    skills: ["Node.js", "Express.js", "NestJS", "FastAPI", "REST APIs", "JWT", "Redis", "PostgreSQL", "AWS (S3/RDS/App Runner)", "Docker"],
+    skills: ["Node.js", "Express.js", "NestJS", "REST API Design", "JWT / bcrypt Auth", "RBAC", "Socket.IO", "Sequelize", "System Design"],
     color: "#0070f3"
   },
   {
-    title: "Frontend & Mobile",
-    icon: <Smartphone size={20} />,
-    skills: ["Next.js", "React", "TypeScript", "TailwindCSS", "Flutter"],
-    color: "#ef4444"
-  },
-  {
-    title: "Tools & Frameworks",
-    icon: <Settings size={20} />,
-    skills: ["Postman", "WebSockets", "Agora SDK", "TensorFlow", "Git/GitHub", "Linux"],
-    color: "#f59e0b"
+    title: "Frontend Engineering",
+    icon: <Layout size={20} />,
+    skills: ["React", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "Vite", "Framer Motion"],
+    color: "#9333ea"
   },
   {
     title: "Databases",
     icon: <Database size={20} />,
-    skills: ["PostgreSQL", "Redis", "AWS RDS", "Supabase"],
+    skills: ["PostgreSQL", "Supabase", "MySQL", "Redis", "SQL (ACID & Relations)"],
     color: "#3b82f6"
   },
   {
-    title: "AI & ML",
-    icon: <Brain size={20} />,
-    skills: ["TensorFlow", "Gemini API", "YOLOv3", "Tesseract", "OpenCV"],
+    title: "DevOps & Deployment",
+    icon: <Cloud size={20} />,
+    skills: ["DigitalOcean", "Render.com", "Docker", "Kubernetes", "Git / GitHub", "Postman", "Linux", "CI-Style Release Management"],
+    color: "#f59e0b"
+  },
+  {
+    title: "Languages",
+    icon: <Code2 size={20} />,
+    skills: ["TypeScript", "JavaScript", "Java", "Python", "SQL", "C++"],
     color: "#10b981"
+  },
+  {
+    title: "AI / ML & Foundations",
+    icon: <Brain size={20} />,
+    skills: ["Gemini API", "TensorFlow", "OpenCV", "Data Structures & Algorithms", "Structured Manual/API Testing"],
+    color: "#ef4444"
   }
 ];
 

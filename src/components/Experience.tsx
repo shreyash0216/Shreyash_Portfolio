@@ -17,50 +17,63 @@ interface ExperienceItem {
 
 const EXPERIENCES: ExperienceItem[] = [
   {
-    company: "Syantrex Technologies",
-    role: "Founder & Lead Engineer",
-    period: "Jun 2026 - Present",
-    status: "founder",
+    company: "Syantrex (Pre-Registration)",
+    role: "Independent Project Lead — Full-Stack Development",
+    period: "Jun 2026 – Present",
+    status: "current",
     impact: [
-      "Architected a multi-tenant SaaS ERP (NestJS, PostgreSQL, React, WebSockets) with Role-Based Access Control, serving live retail clients.",
-      "Engineered an offline-first Mobile Shop Management app in Flutter featuring real-time inventory tracking and client-side PDF invoice generation.",
-      "Managed cloud deployments, database schema migrations, and CI/CD pipelines for production Android builds.",
+      "Built and shipped a production retail SaaS application solo — Node.js/Express backend, PostgreSQL database, React-based frontend, JWT auth with bcrypt hashing, and role-based access control (RBAC).",
+      "Set up the project from scratch and deployed it to a DigitalOcean production droplet, with Render.com as a staging/fallback environment.",
+      "Ran the full pre-launch QA pass myself — used Postman to test API endpoints end-to-end and caught 5 release-blocking issues (release build signing, image memory/OOM handling, hashing consistency) before go-live.",
+      "Currently architecting a multi-tenant SaaS admin panel on NestJS, PostgreSQL, React, JWT/bcrypt, RBAC, and Socket.IO as a parallel workstream.",
     ],
-    tech: ["NestJS", "PostgreSQL", "React", "WebSockets", "Flutter", "Docker"],
+    tech: ["Node.js", "NestJS", "Express.js", "PostgreSQL", "React", "Socket.IO", "DigitalOcean", "Render.com", "Postman", "RBAC", "JWT/bcrypt"],
     logo: "syantrex-logo.png"
   },
   {
-    company: "IBM SkillsBuild × AICTE",
-    role: "AI Automation Intern",
-    period: "Jun 2026 - Jul 2026",
+    company: "Moash, Pune (Hybrid)",
+    role: "Web & Software Development Intern",
+    period: "Jun 2026 – Aug 2026",
     status: "completed",
     impact: [
-      "Completed a 6-week intensive engineering program on AI automation pipelines, intelligent system integration, and workflow orchestration.",
-      "Earned certification with Credential ID: BHIBMAC01877 through Bharat Cares partnership.",
+      "Reporting directly to Founder & CEO, worked within a multi-tenant SaaS product built on Next.js, TypeScript, and Supabase.",
+      "Audited all 96 product features against technical specification and compiled comprehensive findings that informed core engineering priorities.",
     ],
-    tech: ["AI/ML", "Automation", "System Integration", "Workflow Orchestration"],
-    icon: <Cpu size={24} className="text-blue-400" />
+    tech: ["Next.js", "TypeScript", "Supabase", "Multi-Tenant SaaS", "Feature Auditing"],
+    icon: <Briefcase size={24} className="text-cyan-400" />
   },
   {
     company: "Careasa Healthcare",
     role: "App Development Intern",
-    period: "Dec 2025 - Jun 2026",
+    period: "Dec 2025 – Jun 2026",
     status: "completed",
     impact: [
-      "Built 15+ production REST APIs using Node.js/Express.js with JWT authentication and structured validation layers.",
-      "Synchronized AWS RDS models and S3 storage, achieving 99%+ cross-platform data reliability across web/mobile.",
-      "Integrated Agora SDK for low-latency real-time video communication and managed 15+ APK/IPA release cycles.",
+      "Built 15+ production REST APIs using Node.js/Express with JWT authentication, achieving 99%+ cross-platform data reliability across web and mobile clients.",
+      "Debugged production config issues end-to-end, including a Node.js/Sequelize/PostgreSQL connection failure traced to missing environment variables.",
+      "Contributed to backend development and API endpoints across multiple application releases, working with existing architecture and database layers.",
     ],
-    tech: ["Node.js", "Express.js", "JWT", "AWS S3/RDS", "Agora SDK", "Flutter"],
+    tech: ["Node.js", "Express.js", "PostgreSQL", "Sequelize", "JWT Auth", "REST APIs"],
     logo: "careasa-logo.png"
+  },
+  {
+    company: "IBM SkillsBuild × AICTE (Bharat Cares)",
+    role: "AI Automation Intern",
+    period: "Jun 2026 – Jul 2026",
+    status: "completed",
+    impact: [
+      "Completed a 6-week intensive structured program on automation pipelines and workflow orchestration.",
+      "Earned verified certification with Credential ID: BHIBMAC01877 covering enterprise AI automation workflows.",
+    ],
+    tech: ["Automation Pipelines", "Workflow Orchestration", "AI Integration", "System Architecture"],
+    logo: "IBM_LOGO.png"
   },
 ];
 
 const StatusBadge = ({ status }: { status: string }) => {
   const configs: Record<string, { label: string; color: string; icon: string }> = {
-    current: { label: "Current", color: "text-green-500 bg-green-500/10 border-green-500/20", icon: "🟢" },
+    current: { label: "Current Lead", color: "text-purple-400 bg-purple-500/10 border-purple-500/20", icon: "🟣" },
     founder: { label: "Founder", color: "text-purple-500 bg-purple-500/10 border-purple-500/20", icon: "🟣" },
-    completed: { label: "Completed", color: "text-orange-500 bg-orange-500/10 border-orange-500/20", icon: "🟠" },
+    completed: { label: "Completed", color: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20", icon: "🟢" },
   };
 
   const config = configs[status];
@@ -102,7 +115,15 @@ const Experience = () => {
                 >
                   <div className="transition-transform group-hover:rotate-2 w-full h-full flex items-center justify-center">
                     {exp.logo ? (
-                      <img src={getAssetPath(exp.logo)} alt={`${exp.company} Logo - Software Engineering Internship`} className="w-full h-full object-cover" />
+                      <img
+                        src={getAssetPath(exp.logo)}
+                        alt={`${exp.company} Logo - Software Engineering Internship`}
+                        className={`w-full h-full ${
+                          exp.logo === 'IBM_LOGO.png'
+                            ? 'object-contain p-2 bg-white'
+                            : 'object-cover'
+                        }`}
+                      />
                     ) : (
                       exp.icon
                     )}

@@ -6,62 +6,62 @@ import { getAssetPath } from "@/lib/utils";
 
 const PROJECTS = [
   {
-    title: "Careasa CRM",
-    style: "healthcare",
-    desc: "A scalable healthcare backend system with secure data workflows, JWT authentication, and real-time communication integration.",
-    problem: "Healthcare providers need secure, real-time systems to manage patient data and consultations.",
-    role: "Backend Architect",
-    arch: "Relational CRM",
-    tech: ["Node.js", "PostgreSQL", "AWS", "Agora SDK"],
+    title: "Syantrex ERP",
+    style: "Multi-Tenant SaaS",
+    desc: "Production retail business management platform built around real-world retail workflows. Shipped solo with Node.js/Express backend, PostgreSQL database, React frontend, JWT/bcrypt auth with RBAC, Socket.IO real-time sync, and PDF billing deployed to DigitalOcean & Render.",
+    problem: "Electronics retailers face IMEI tracking gaps, inventory desynchronization, and multi-tenant access control risks during high-throughput checkouts.",
+    role: "Independent Project Lead — Full-Stack Development",
+    arch: "Multi-Tenant Event-Driven Architecture (NestJS/Express + PostgreSQL + Socket.IO + React)",
+    tech: ["NestJS", "Node.js", "Express.js", "PostgreSQL", "React", "Socket.IO", "DigitalOcean", "Render.com"],
+    links: { demo: "https://www.syantrex.online" },
+    accent: "#9333ea",
+    logo: "syantrex-logo-dark.png"
+  },
+  {
+    title: "DermaScanAI",
+    style: "AI Healthcare (2nd Prize)",
+    desc: "AI-powered skin disease detection project combining computer vision with practical healthcare workflows, image-based condition classification, triage guidance, and clinic discovery using OpenStreetMap APIs.",
+    problem: "Early detection of dermatological conditions is hindered by scarce clinical specialists and lack of automated location-aware triage.",
+    role: "Backend & System Contributor (SP College 2nd Prize Winner)",
+    arch: "Multi-Tier Inference & Spatial Mapping Engine (FastAPI + TensorFlow + Next.js + OSM APIs)",
+    tech: ["Next.js", "FastAPI", "TensorFlow", "OpenStreetMap APIs", "Python", "REST APIs"],
+    links: { github: "https://github.com/siddheshwar09/DermaScanAI" },
+    accent: "#10b981",
+    logo: "dermascan-logo-dark.png"
+  },
+  {
+    title: "GRA — Resilience Agent",
+    style: "GenAI & Climate (IIT Bombay Techfest)",
+    desc: "Full React rewrite of an ML-powered frontend (10 crop varieties) preserving the existing prediction engine and Gemini API integration within a fixed hackathon timeline (Team COSMOS, AWS ImpactX Challenge).",
+    problem: "Reliable climate risk data and crop recommendations fail under low-connectivity or high-latency environments without resilient client fallback.",
+    role: "Frontend Lead (Team COSMOS)",
+    arch: "Fault-Tolerant Generative AI Client Architecture (React + Vite + Gemini API)",
+    tech: ["React", "Vite", "TypeScript", "Gemini API", "Tailwind CSS", "AWS"],
+    links: { demo: "https://www.genresai.me/", github: "https://github.com/shreyash0216/Gra-2" },
+    accent: "#22c55e",
+    logo: "gra-logo.png"
+  },
+  {
+    title: "Careasa Healthcare Platform",
+    style: "Production REST APIs",
+    desc: "Built 15+ production REST APIs with Node.js/Express and JWT authentication, achieving 99%+ cross-platform data reliability across web and mobile clients, with end-to-end PostgreSQL/Sequelize integration.",
+    problem: "Healthcare providers require strictly authenticated patient workflows, zero-drift cross-platform synchronization, and resilient production database configs.",
+    role: "App Development Intern",
+    arch: "Relational REST Architecture (Node.js + Express + Sequelize + PostgreSQL)",
+    tech: ["Node.js", "Express.js", "PostgreSQL", "Sequelize", "JWT Auth", "Postman"],
     links: { demo: "https://www.careasa.com" },
     accent: "#3b82f6",
     logo: "careasa-logo.png"
   },
   {
-    title: "Syantrex ERP",
-    style: "enterprise",
-    desc: "Enterprise POS & ERP platform for electronics retailers. Features unit-level IMEI tracking, GST PDF billing, custom Reverse-GST engine, and sub-100ms speeds.",
-    problem: "Electronics retailers face IMEI tracking gaps, GST ledger rounding drift, and transaction collisions during high-volume checkouts.",
-    role: "Founder & Lead Architect",
-    arch: "Multi-Tenant POS & ERP",
-    tech: ["Flutter", "NestJS", "Prisma", "PostgreSQL 16", "Docker", "DigitalOcean"],
-    links: { demo: "https://www.syantrex.online" },
-    accent: "#9333ea",
-    logo: "syantrex-logo.png"
-  },
-  {
-    title: "DermaScanAI",
-    style: "healthcare",
-    desc: "CV-based dermatological condition classifier. Architected the backend for secure image upload pipelines and healthcare data workflows.",
-    problem: "Early detection of skin conditions is often inaccessible or delayed.",
-    role: "Backend Lead",
-    arch: "Inference Engine",
-    tech: ["Python", "TensorFlow", "Node.js", "Express"],
-    links: { github: "https://github.com/siddheshwar09/DermaScanAI"},
-    accent: "#10b981",
-    logo: "dermascan-logo.png"
-  },
-  {
-    title: "GRA – Resilience Agent",
-    style: "architecture",
-    desc: "AI climate adaptation platform with Gemini API + offline ML fallback. Built for AWS ImpactX Challenge.",
-    problem: "Reliable climate risk data often fails in low-connectivity areas.",
+    title: "OCR Assistant & CV Pipeline",
+    style: "Computer Vision",
+    desc: "Real-time object detection and OCR pipeline utilizing YOLOv3 and Tesseract for continuous video stream processing, text extraction, and automated classification.",
+    problem: "Manual data entry and classification from physical documents or video streams in dynamic environments is slow and error-prone.",
     role: "Lead Developer",
-    arch: "Fault-Tolerant AI",
-    tech: ["TypeScript", "Gemini API", "AWS", "ML"],
-    links: { github: "https://github.com/shreyash0216/Gra-2"},
-    accent: "#22c55e",
-    logo: "gra-logo.png"
-  },
-  {
-    title: "OCR Assistant",
-    style: "terminal",
-    desc: "Real-time object detection and OCR pipeline utilizing YOLOv3 and Tesseract for video stream processing.",
-    problem: "Manual data entry from physical documents/labels in dynamic environments.",
-    role: "Lead Developer",
-    arch: "CV Pipeline",
-    tech: ["Python", "YOLOv3", "Tesseract", "OpenCV"],
-    links: { github: "https://github.com/shreyash0216/Object-Detection"},
+    arch: "Real-Time Video Stream Inference Pipeline",
+    tech: ["Python", "YOLOv3", "Tesseract", "OpenCV", "NumPy"],
+    links: { github: "https://github.com/shreyash0216/Object-Detection" },
     accent: "#ef4444"
   }
 ];
@@ -87,46 +87,76 @@ const Projects = () => {
             className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 items-center`}
           >
             {/* Visual Representation */}
-            <div className="w-full lg:w-3/5 aspect-video glass-card overflow-hidden relative group">
-               {/* Unique Background based on style */}
-               <div
-                className="absolute inset-0 opacity-20 transition-opacity group-hover:opacity-30"
+            <div className="w-full lg:w-3/5 aspect-video glass-card overflow-hidden relative group border border-white/10">
+              {/* Top Window Bar */}
+              <div className="absolute top-0 left-0 right-0 h-9 px-4 border-b border-white/5 bg-black/50 backdrop-blur-md flex items-center justify-between z-20">
+                <div className="flex items-center gap-1.5">
+                  <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
+                </div>
+                <div className="text-[10px] font-mono text-zinc-400 flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="tracking-wider">{project.links.demo ? project.links.demo.replace('https://', '').replace('www.', '') : 'architecture-preview'}</span>
+                </div>
+                <div className="text-[9px] font-mono uppercase tracking-widest text-zinc-600">v2.4</div>
+              </div>
+
+              {/* Ambient Glow */}
+              <div
+                className="absolute inset-0 opacity-25 transition-opacity group-hover:opacity-40"
                 style={{
-                  background: `radial-gradient(circle at 50% 50%, ${project.accent}20, transparent)`,
+                  background: `radial-gradient(circle at 50% 55%, ${project.accent}35, transparent 70%)`,
                 }}
               />
 
-              <div className="absolute inset-0 flex items-center justify-center p-8 md:p-12">
+              <div className="absolute inset-0 pt-9 flex items-center justify-center p-6 md:p-10">
                 {project.logo ? (
-                   <img src={getAssetPath(project.logo)} alt={`${project.title} project logo`} className="w-48 md:w-64 h-auto opacity-80 group-hover:opacity-100 transition-opacity" />
-                ) : project.style === 'terminal' ? (
-                   <div className="w-full h-full font-mono text-[100px] text-red-500/60 overflow-hidden leading-tight p-4 flex items-center justify-center text-center">
-                      OCR Assistant
-                   </div>
-                ) : project.style === 'saas' ? (
-                  <div className="grid grid-cols-3 gap-4 w-full">
-                    <div className="h-32 rounded-xl bg-blue-500/10 border border-blue-500/20" />
-                    <div className="h-32 rounded-xl bg-blue-500/20 border border-blue-500/30" />
-                    <div className="h-32 rounded-xl bg-blue-500/10 border border-blue-500/20" />
+                  <div className="relative group/logo flex flex-col items-center gap-4">
+                    <div
+                      className="absolute -inset-10 rounded-full blur-3xl opacity-30 group-hover/logo:opacity-50 transition-opacity duration-500"
+                      style={{ background: project.accent }}
+                    />
+
+                    {/* Sleek Dark Frosted Tile with zero harsh white background */}
+                    <div className="relative z-10 px-8 py-6 md:px-12 md:py-8 bg-zinc-950/60 hover:bg-zinc-900/60 rounded-2xl md:rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-white/10 backdrop-blur-2xl flex items-center justify-center transform group-hover/logo:scale-105 transition-all duration-500">
+                      <img
+                        src={getAssetPath(project.logo)}
+                        alt={`${project.title} project logo`}
+                        className="w-28 sm:w-36 md:w-44 h-auto max-h-16 md:max-h-20 object-contain drop-shadow-[0_8px_16px_rgba(0,0,0,0.4)]"
+                      />
+                    </div>
+
+                    <div className="relative z-10 flex items-center gap-2 px-3 py-1 bg-white/[0.04] border border-white/10 rounded-full backdrop-blur-md text-[10px] font-mono text-zinc-400">
+                      <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: project.accent }} />
+                      <span className="tracking-wide font-medium text-zinc-300">{project.title}</span>
+                    </div>
                   </div>
                 ) : (
-                  <div className="flex items-center gap-4">
-                    <div className="w-16 h-16 rounded-full border-2 border-dashed border-white/10 animate-spin-slow" />
-                    <div className="h-px w-32 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-                    <div className="w-16 h-16 rounded-lg border border-white/10" />
+                  <div className="w-full h-full font-mono text-[11px] text-zinc-400 p-6 flex flex-col justify-center items-center gap-3 border border-white/5 rounded-2xl bg-black/40">
+                    <div className="text-red-400 font-bold text-lg md:text-xl flex items-center gap-2">
+                      <Terminal size={18} /> OCR Assistant &amp; CV Pipeline
+                    </div>
+                    <div className="text-xs text-zinc-500 max-w-sm text-center font-mono">
+                      [YOLOv3 Inference Engine] • [Tesseract OCR Extraction] • [OpenCV Video Pipeline]
+                    </div>
+                    <div className="flex gap-2 mt-2">
+                      <span className="px-2 py-0.5 bg-red-500/10 border border-red-500/20 text-red-400 rounded text-[9px]">REAL-TIME 60FPS</span>
+                      <span className="px-2 py-0.5 bg-white/5 border border-white/10 text-zinc-300 rounded text-[9px]">BOUNDING BOX ACCURACY</span>
+                    </div>
                   </div>
                 )}
               </div>
 
-              <div className="absolute bottom-8 left-8 flex gap-4 opacity-0 group-hover:opacity-100 transition-opacity">
+              <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 flex gap-3 z-30">
                 {project.links.github && (
                   <a
                     href={project.links.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 bg-black border border-white/10 rounded-xl hover:scale-110 transition-transform"
+                    className="p-2.5 bg-black/80 backdrop-blur-md border border-white/15 rounded-xl hover:scale-110 transition-transform text-zinc-300 hover:text-white"
                   >
-                    <Github size={18} />
+                    <Github size={16} />
                   </a>
                 )}
                 {project.links.demo && (
@@ -134,9 +164,9 @@ const Projects = () => {
                     href={project.links.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-3 bg-black border border-white/10 rounded-xl hover:scale-110 transition-transform text-accent"
+                    className="p-2.5 bg-black/80 backdrop-blur-md border border-white/15 rounded-xl hover:scale-110 transition-transform text-accent"
                   >
-                    <ExternalLink size={18} />
+                    <ExternalLink size={16} />
                   </a>
                 )}
               </div>
@@ -157,17 +187,24 @@ const Projects = () => {
 
               <div className="space-y-4 pt-4">
                 <div className="flex items-start gap-4">
+                  <div className="p-2 bg-white/5 rounded-lg shrink-0 mt-1"><Terminal size={14} className="text-accent" /></div>
+                  <div>
+                    <h4 className="text-xs font-bold text-zinc-300 uppercase tracking-widest mb-1">Role</h4>
+                    <p className="text-sm text-zinc-300 font-medium">{project.role}</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-4">
                   <div className="p-2 bg-white/5 rounded-lg shrink-0 mt-1"><Zap size={14} className="text-accent" /></div>
                   <div>
                     <h4 className="text-xs font-bold text-zinc-300 uppercase tracking-widest mb-1">Problem</h4>
-                    <p className="text-sm text-zinc-500">{project.problem}</p>
+                    <p className="text-sm text-zinc-400">{project.problem}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <div className="p-2 bg-white/5 rounded-lg shrink-0 mt-1"><Layers size={14} className="text-accent" /></div>
                   <div>
                     <h4 className="text-xs font-bold text-zinc-300 uppercase tracking-widest mb-1">Architecture</h4>
-                    <p className="text-sm text-zinc-500">{project.arch}</p>
+                    <p className="text-sm text-zinc-400">{project.arch}</p>
                   </div>
                 </div>
               </div>

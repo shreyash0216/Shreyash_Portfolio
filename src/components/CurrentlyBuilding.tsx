@@ -7,12 +7,13 @@ import { getAssetPath } from "@/lib/utils";
 const PROJECTS = [
   {
     title: "Syantrex ERP",
-    company: "Syantrex Technologies",
-    role: "Founder & Lead Architect",
-    desc: "Enterprise POS & ERP platform for electronics retailers with IMEI lifecycle tracking, custom Reverse-GST engine, and sub-100ms transaction speeds.",
-    stack: ["Flutter", "NestJS", "Prisma", "PostgreSQL 16", "Docker", "DigitalOcean"],
-    status: "Since June 2026",
-    accent: "#9333ea"
+    company: "Syantrex (Pre-Registration)",
+    role: "Independent Project Lead — Full-Stack Development",
+    desc: "Production multi-tenant business management platform built around real-world retail workflows. Features solo-engineered Node.js/Express backend, PostgreSQL database, React frontend, JWT/bcrypt auth with RBAC, Socket.IO real-time updates, PDF billing, and DigitalOcean/Render deployments.",
+    stack: ["NestJS", "Node.js", "Express", "PostgreSQL", "React", "Socket.IO", "DigitalOcean", "Render.com", "Postman", "RBAC"],
+    status: "Jun 2026 – Present",
+    accent: "#9333ea",
+    url: "https://www.syantrex.online"
   }
 ];
 
@@ -41,8 +42,8 @@ const CurrentlyBuilding = () => {
             <div className="flex justify-between items-start mb-4">
               <div>
                 <div className="flex items-center gap-3 mb-1">
-                  {project.company === 'Syantrex Technologies' && (
-                    <img src={getAssetPath("syantrex-logo.png")} alt="Syantrex Technologies - Founder & Developer Logo" className="w-5 h-5 rounded-sm object-cover bg-white p-0.5" />
+                  {project.company.includes('Syantrex') && (
+                    <img src={getAssetPath("syantrex-logo.png")} alt="Syantrex Technologies Logo" className="w-5 h-5 rounded-sm object-cover bg-white p-0.5" />
                   )}
                   <span className="text-[10px] font-mono font-bold text-accent uppercase tracking-widest">{project.company}</span>
                 </div>
@@ -53,7 +54,7 @@ const CurrentlyBuilding = () => {
               </div>
             </div>
 
-            <p className="text-zinc-500 text-sm leading-relaxed mb-6 max-w-xl">
+            <p className="text-zinc-400 text-sm leading-relaxed mb-6 max-w-xl">
               {project.desc}
             </p>
 
@@ -69,12 +70,13 @@ const CurrentlyBuilding = () => {
               </span>
               <div className="ml-auto flex gap-4">
                  <a
-                   href="#"
+                   href={project.url}
                    target="_blank"
                    rel="noopener noreferrer"
-                   className="text-zinc-500 hover:text-white transition-colors"
+                   className="text-zinc-500 hover:text-accent transition-colors flex items-center gap-1.5 text-xs font-mono"
                  >
-                   <ExternalLink size={16} />
+                   <span>Live Preview</span>
+                   <ExternalLink size={14} />
                  </a>
               </div>
             </div>

@@ -31,11 +31,12 @@ const Contact = () => {
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 pt-4">
             <div className="space-y-4 text-center md:text-left">
-              <p className="text-[10px] font-mono text-zinc-500 uppercase tracking-[0.3em]">Status</p>
+              <p className="text-[10px] font-mono text-zinc-500 uppercase tracking-[0.3em]">Status & Availability</p>
               <div className="flex items-center gap-3 justify-center md:justify-start">
-                 <div className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.5)]" />
-                 <span className="text-xl font-bold text-zinc-200 tracking-tight">Open for Production Roles</span>
+                 <div className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_10px_rgba(52,211,153,0.5)]" />
+                 <span className="text-lg md:text-xl font-bold text-zinc-200 tracking-tight">Open for SDE Intern / SDE-1 Roles</span>
               </div>
+              <p className="text-xs text-zinc-500 font-mono">Available immediately • Full-time in-office in Pune or Hybrid</p>
             </div>
 
             <div className="h-12 w-px bg-white/10 hidden md:block" />
@@ -45,13 +46,15 @@ const Contact = () => {
               <a href="mailto:shreyashatre16@gmail.com" className="text-xl md:text-2xl font-bold text-white hover:text-accent transition-colors block tracking-tight">
                 shreyashatre16@gmail.com
               </a>
+              <p className="text-xs text-zinc-500 font-mono">Pune, Maharashtra, India</p>
             </div>
           </div>
 
           <div className="flex flex-wrap justify-center gap-4 pt-8">
             {[
               { label: "Github", icon: <Github size={20} />, href: "https://github.com/shreyash0216" },
-              { label: "LinkedIn", icon: <Linkedin size={20} />, href: "https://linkedin.com/in/shreyash-atre-901340317" },
+              { label: "LinkedIn", icon: <Linkedin size={20} />, href: "https://www.linkedin.com/in/shreyash-atre-901340317/" },
+              { label: "X / Twitter", icon: <span className="font-bold text-base">𝕏</span>, href: "https://x.com/atre_shreyash" },
               { label: "Resume", icon: <FileCode size={20} />, href: "https://drive.google.com/file/d/1L77HQNQ3cc_8jI85kSaGXLg5SbB_2a_X/view?usp=share_link" },
             ].map((link) => (
               <a

@@ -7,51 +7,51 @@ import { useState, useRef, useEffect } from "react";
 const NODES = [
   {
     icon: <Smartphone size={24} />,
-    label: "Flutter Client",
+    label: "React / Client UI",
     color: "#0070f3",
-    purpose: "Cross-platform application core.",
-    desc: "Communicates using secure REST APIs and handles real-time state via Agora.",
-    tech: ["Flutter", "Dart", "REST", "JWT"]
+    purpose: "Cross-platform client interface.",
+    desc: "React and Next.js interfaces with responsive state management, client-side caching, and Socket.IO listeners.",
+    tech: ["React", "Next.js", "TypeScript", "Socket.IO"]
   },
   {
     icon: <Zap size={24} />,
-    label: "REST APIs",
+    label: "REST APIs & Auth",
     color: "#f59e0b",
-    purpose: "Stateless communication layer.",
-    desc: "Endpoints with JWT-based authentication and request validation layers.",
-    tech: ["Node.js", "Express", "JWT", "Postman"]
+    purpose: "Stateless communication & RBAC.",
+    desc: "Endpoints secured with JWT auth, bcrypt hashing, and role-based access control tested end-to-end via Postman.",
+    tech: ["Node.js", "Express", "JWT/bcrypt", "RBAC", "Postman"]
   },
   {
     icon: <Server size={24} />,
-    label: "Node.js (Express)",
+    label: "NestJS Core Engine",
     color: "#10b981",
-    purpose: "Core logic & business engine.",
-    desc: "Managing concurrency, service orchestration, and backend workflows.",
-    tech: ["JavaScript", "Express", "Middleware", "Node.js"]
-  },
-  {
-    icon: <Zap size={24} />,
-    label: "Redis Cache",
-    color: "#ef4444",
-    purpose: "High-speed data persistence.",
-    desc: "Caching session data and frequent query results to reduce latency.",
-    tech: ["Redis", "Memory Store", "Pub/Sub"]
+    purpose: "Multi-tenant business logic.",
+    desc: "Modular service architecture managing tenant isolation, invoice/PDF generation, and real-time event broadcasting.",
+    tech: ["NestJS", "TypeScript", "Socket.IO", "Event Bus"]
   },
   {
     icon: <Database size={24} />,
-    label: "PostgreSQL",
+    label: "PostgreSQL & Supabase",
     color: "#3b82f6",
     purpose: "Relational data management.",
-    desc: "Primary relational storage with ACID compliance for sensitive ERP data.",
-    tech: ["SQL", "PostgreSQL", "Migrations", "RDS"]
+    desc: "ACID-compliant relational schemas with Sequelize/Prisma ORM, foreign keys, and zero-drift migrations.",
+    tech: ["PostgreSQL", "Supabase", "Sequelize", "SQL"]
+  },
+  {
+    icon: <Zap size={24} />,
+    label: "Redis & Pub/Sub",
+    color: "#ef4444",
+    purpose: "Low-latency state & cache.",
+    desc: "Memory store caching frequent tenant queries and mediating socket event distribution under load.",
+    tech: ["Redis", "Memory Store", "Pub/Sub"]
   },
   {
     icon: <Cloud size={24} />,
-    label: "AWS (S3/RDS)",
+    label: "DigitalOcean & Render",
     color: "#ff9900",
-    purpose: "Cloud infrastructure foundation.",
-    desc: "Managed storage and databases for high availability and reliability.",
-    tech: ["S3", "RDS", "EC2", "CloudWatch"]
+    purpose: "Production deployment & fallback.",
+    desc: "Production DigitalOcean droplet deployment backed by Render.com staging/fallback environment with Docker.",
+    tech: ["DigitalOcean", "Render.com", "Docker", "Linux"]
   },
 ];
 
@@ -68,8 +68,8 @@ const SystemDesign = () => {
         </div>
       </div>
 
-      <div ref={containerRef} className="glass-card pt-24 pb-8 px-6 md:px-12 lg:overflow-visible overflow-x-auto relative scrollbar-hide">
-        <div className="flex items-center justify-between gap-6 relative lg:h-28 min-w-[900px] lg:min-w-0">
+      <div ref={containerRef} className="glass-card pt-24 pb-8 px-4 sm:px-6 md:px-8 overflow-x-auto lg:overflow-visible relative scrollbar-hide">
+        <div className="flex items-center justify-between gap-2 sm:gap-3 md:gap-4 relative lg:h-28 min-w-[720px] lg:min-w-0 w-full">
           {NODES.map((node, i) => {
             const isNeighbor = hoveredNode !== null && (hoveredNode === i - 1 || hoveredNode === i + 1);
             const isActive = hoveredNode === i;
@@ -78,7 +78,7 @@ const SystemDesign = () => {
             return (
               <div
                 key={i}
-                className="flex items-center gap-6 relative z-10"
+                className="flex items-center flex-1 last:flex-initial gap-2 sm:gap-3 relative z-10 justify-between last:justify-start"
                 onMouseEnter={() => setHoveredNode(i)}
                 onMouseLeave={() => setHoveredNode(null)}
               >
@@ -88,10 +88,10 @@ const SystemDesign = () => {
                     opacity: isInactive ? 0.4 : 1,
                     borderColor: isActive ? node.color : isNeighbor ? "rgba(255,255,255,0.2)" : "rgba(255,255,255,0.05)"
                   }}
-                  className="flex flex-col items-center gap-4 cursor-help relative"
+                  className="flex flex-col items-center gap-3 cursor-help relative shrink-0 mx-auto"
                 >
                   <div
-                    className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-black border border-zinc-800 flex items-center justify-center text-white transition-all shadow-2xl relative"
+                    className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-2xl bg-black border border-zinc-800 flex items-center justify-center text-white transition-all shadow-2xl relative"
                     style={{
                       boxShadow: isActive ? `0 0 40px ${node.color}40` : isNeighbor ? `0 0 20px ${node.color}10` : 'none',
                     }}
@@ -105,7 +105,7 @@ const SystemDesign = () => {
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={{ opacity: 0, y: 15, scale: 0.95 }}
                           className={`absolute z-[100] w-64 p-5 bg-[#09090b]/98 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] pointer-events-none
-                            ${i > NODES.length / 2 ? '-right-4 lg:-right-4 origin-right' : '-left-4 lg:-left-4 origin-left'}
+                            ${i >= 4 ? 'right-0 origin-top-right' : i === 0 ? 'left-0 origin-top-left' : '-left-8 origin-left'}
                             -top-[155px]
                           `}
                         >
@@ -124,29 +124,29 @@ const SystemDesign = () => {
                               ))}
                             </div>
                           </div>
-                          <div className={`absolute -bottom-1 w-2 h-2 bg-[#09090b] border-b border-r border-white/10 rotate-45 ${i > NODES.length / 2 ? 'right-10' : 'left-10'}`} />
+                          <div className={`absolute -bottom-1 w-2 h-2 bg-[#09090b] border-b border-r border-white/10 rotate-45 ${i >= 4 ? 'right-8' : 'left-8'}`} />
                         </motion.div>
                       )}
                     </AnimatePresence>
                   </div>
-                  <span className={`text-[9px] md:text-[10px] font-mono uppercase tracking-widest transition-all whitespace-nowrap ${isActive ? 'text-white font-bold' : 'text-zinc-600'}`}>
+                  <span className={`text-[9px] sm:text-[10px] font-mono uppercase tracking-wider transition-all text-center max-w-[80px] sm:max-w-[100px] leading-tight block ${isActive ? 'text-white font-bold' : 'text-zinc-500'}`}>
                     {node.label}
                   </span>
                 </motion.div>
 
                 {i < NODES.length - 1 && (
-                  <div className="flex items-center justify-center">
+                  <div className="flex-1 flex items-center justify-center px-1">
                     <motion.div
                       animate={{
                         opacity: hoveredNode === i || hoveredNode === i + 1 ? 1 : 0.15,
                         scaleX: hoveredNode === i || hoveredNode === i + 1 ? 1.2 : 1,
                         backgroundColor: hoveredNode === i || hoveredNode === i + 1 ? node.color : "#27272a"
                       }}
-                      className="w-8 md:w-12 h-0.5 origin-left transition-colors"
+                      className="w-full max-w-[24px] sm:max-w-[36px] md:max-w-[48px] h-0.5 origin-left transition-colors"
                     />
                     <motion.div
                       animate={{
-                        x: hoveredNode === i || hoveredNode === i + 1 ? [0, 4, 0] : 0,
+                        x: hoveredNode === i || hoveredNode === i + 1 ? [0, 3, 0] : 0,
                         color: hoveredNode === i || hoveredNode === i + 1 ? node.color : "#27272a",
                         opacity: hoveredNode === i || hoveredNode === i + 1 ? 1 : 0.15,
                       }}
@@ -154,9 +154,9 @@ const SystemDesign = () => {
                         x: { repeat: hoveredNode === i || hoveredNode === i + 1 ? Infinity : 0, duration: 1.5 },
                         opacity: { duration: 0.3 }
                       }}
-                      className="-ml-2 transition-colors"
+                      className="-ml-1 transition-colors shrink-0"
                     >
-                      <ArrowRight size={16} />
+                      <ArrowRight size={14} />
                     </motion.div>
                   </div>
                 )}

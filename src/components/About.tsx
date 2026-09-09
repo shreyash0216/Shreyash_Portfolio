@@ -16,31 +16,34 @@ const About = () => {
         <div className="lg:col-span-7 space-y-6">
           <div className="glass-card p-6 md:p-10 border-white/5 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-1 h-full bg-accent" />
-            <p className="text-xl md:text-2xl text-zinc-300 leading-relaxed font-medium">
-              Software Engineer with a <span className="text-white font-bold">8.68 CGPA</span> focused on full-stack development,
-              scalable API architecture, and AI-driven systems.
+            <p className="text-xl md:text-2xl text-zinc-200 leading-relaxed font-medium">
+              Final-year B.Sc. Computer Science student (<span className="text-white font-bold">CGPA 8.68</span>) who has shipped production full-stack systems solo — backend, frontend, database, deployment, and QA.
             </p>
-            <p className="text-zinc-500 mt-4 md:mt-6 leading-relaxed text-sm md:text-base">
-              I approach software engineering with a product-first mindset—bridging the gap between
-              scalable architecture and seamless user experiences. Whether it's architecting
-              multi-tenant SaaS platforms or engineering real-time communication infrastructure,
-              my focus is always on reliability, performance, and scalability.
+            <p className="text-zinc-400 mt-4 md:mt-6 leading-relaxed text-sm md:text-base">
+              Experienced across Node.js, NestJS, React, and PostgreSQL. Comfortable setting up projects from scratch and owning them through to live clients using them daily. Dedicated to turning real-world requirements into resilient software:
+              <span className="block mt-3 text-zinc-300 font-mono text-xs md:text-sm border-l-2 border-accent pl-3 py-0.5">
+                &ldquo;Build it clearly, understand it deeply, and optimize it when it matters.&rdquo;
+              </span>
             </p>
+            <div className="mt-4 pt-4 border-t border-white/5 flex items-center gap-2 text-xs font-mono text-emerald-400">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              Available immediately, full-time, in-office in Pune.
+            </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
             <div className="p-5 md:p-6 glass-card border-white/5 flex items-start gap-4 hover:bg-white/[0.02] transition-colors">
               <div className="p-3 bg-accent/10 rounded-xl text-accent"><Code2 size={20} /></div>
               <div>
-                <h4 className="text-sm font-bold text-zinc-300 uppercase tracking-widest mb-1">Current Role</h4>
-                <p className="text-xs text-zinc-500 leading-relaxed">Founder & Lead Engineer at Syantrex Technologies.</p>
+                <h4 className="text-sm font-bold text-zinc-300 uppercase tracking-widest mb-1">Current Experience</h4>
+                <p className="text-xs text-zinc-400 leading-relaxed">Independent Project Lead at Syantrex &amp; Ex-Intern at Moash / Careasa.</p>
               </div>
             </div>
             <div className="p-5 md:p-6 glass-card border-white/5 flex items-start gap-4 hover:bg-white/[0.02] transition-colors">
               <div className="p-3 bg-purple-500/10 rounded-xl text-purple-400"><Cpu size={20} /></div>
               <div>
                 <h4 className="text-sm font-bold text-zinc-300 uppercase tracking-widest mb-1">Core Focus</h4>
-                <p className="text-xs text-zinc-500 leading-relaxed">Full-Stack Systems, Cloud Infrastructure, and AI/ML Integration.</p>
+                <p className="text-xs text-zinc-400 leading-relaxed">NestJS, Node.js, PostgreSQL, React, REST API Design, and Multi-Tenant SaaS.</p>
               </div>
             </div>
           </div>

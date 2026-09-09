@@ -1,19 +1,24 @@
-# Shreyash Atre - Software Engineer & Founder
+# Shreyash Atre - Full-Stack Developer & Software Engineer
 
-Shreyash Atre is a Software Engineer specializing in full-stack development, scalable systems, and production-grade SaaS. He is a B.Sc. Computer Science student at Sir Parashurambhau College, Pune (Graduating 2027).
+Shreyash Atre is a Full-Stack Developer specializing in Node.js, NestJS, React, PostgreSQL, and REST API architecture. Final-year B.Sc. Computer Science student at Sir Parashurambhau College, Pune (CGPA: 8.68 / 10.0, Class of 2027). Available immediately for full-time / in-office SDE roles in Pune.
 
-## Roles
-- **Founder & Lead Architect at Syantrex Technologies**: Building Syantrex ERP, an enterprise POS & ERP platform for electronics retailers in India with IMEI tracking, Reverse-GST engine, and sub-100ms response times.
-- **App Development Intern at Careasa Healthcare (Past)**: Developed real-time communication infrastructure and secure APIs.
+## Experience & Roles
+- **Independent Project Lead — Full-Stack Development at Syantrex (Jun 2026 – Present)**: Built and shipped production retail SaaS solo (Node.js/Express, PostgreSQL, React, JWT/bcrypt, RBAC, Socket.IO) deployed to DigitalOcean with Render fallback.
+- **Web & Software Development Intern at Moash (Jun 2026 – Aug 2026)**: Multi-tenant SaaS on Next.js, TypeScript, and Supabase; audited 96 features against specification to inform engineering priorities.
+- **App Development Intern at Careasa Healthcare (Dec 2025 – Jun 2026)**: Built 15+ production REST APIs with Node.js/Express and JWT auth, 99%+ data reliability, and PostgreSQL/Sequelize debugging.
+- **AI Automation Intern at IBM SkillsBuild × AICTE (Jun 2026 – Jul 2026)**: 6-week program on automation pipelines and workflow orchestration (Credential ID: BHIBMAC01877).
 
-## Key Projects
-- **Syantrex ERP**: Multi-tenant POS & ERP platform (Flutter, NestJS, Prisma, PostgreSQL 16, Docker, DigitalOcean).
-- **DermaScanAI**: AI-based dermatological condition classifier (2nd Prize winner).
-- **GRA – Resilience Agent**: Fault-tolerant AI sustainability platform.
-- **OCR Assistant**: Real-time CV pipeline for document processing.
+## Key Projects & Achievements
+- **Syantrex ERP**: Production multi-tenant retail management SaaS (https://www.syantrex.online).
+- **DermaScanAI**: 2nd Prize Winner — SP College Science Exhibition 2026 (Next.js, FastAPI, TensorFlow, OpenStreetMap APIs).
+- **GRA — Generative Resilience Agent**: AWS ImpactX Challenge participant, IIT Bombay Techfest 2025 (React rewrite, Gemini API).
+- **Certificate of Excellence**: DevOps Workshop, SPPU ACM Student Chapter (Sep 2026).
+- **Top 9 Rank**: SPPU Inter-College CS Quiz.
 
-## Links
+## Links & Contact
+- Email: shreyashatre16@gmail.com
+- Portfolio: https://shreyash0216.github.io/Shreyash_Portfolio/
 - LinkedIn: https://linkedin.com/in/shreyash-atre-901340317
 - GitHub: https://github.com/shreyash0216
-- Company: https://www.syantrex.online
-- Portfolio: https://shreyash0216.github.io/Shreyash_Portfolio/
+- X / Twitter: https://x.com/atre_shreyash
+- Syantrex: https://www.syantrex.online
