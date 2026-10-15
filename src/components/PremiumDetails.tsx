@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
-import { Search, Command } from "lucide-react";
+import { Command } from "lucide-react";
 
 export const ScrollProgress = () => {
   const { scrollYProgress } = useScroll();

@@ -85,7 +85,7 @@ const Hero = () => {
                   <Linkedin size={20} />
                 </a>
                 <a
-                  href="https://drive.google.com/file/d/1L77HQNQ3cc_8jI85kSaGXLg5SbB_2a_X/view?usp=share_link"
+                  href={getAssetPath("resume.pdf")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex-1 sm:flex-none flex items-center justify-center gap-3 px-6 py-4 bg-accent/10 border border-accent/20 text-accent font-bold rounded-2xl hover:bg-accent hover:text-white transition-all group text-sm"
@@ -109,7 +109,7 @@ const Hero = () => {
 
               <img
                 src={getAssetPath("shreyash.jpg")}
-                alt="Shreyash Atre"
+                alt="Shreyash Atre - Full-Stack Developer & Software Engineer Pune"
                 className="w-full h-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-hover:scale-105"
               />
 

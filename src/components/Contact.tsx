@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, ArrowUpRight, FileCode } from "lucide-react";
+import { Github, Linkedin, ArrowUpRight, FileCode } from "lucide-react";
+import { getAssetPath } from "@/lib/utils";
 
 const Contact = () => {
   return (
@@ -25,7 +26,7 @@ const Contact = () => {
               Ready to scale?
             </motion.span>
             <h2 className="text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter text-white leading-[0.9]">
-              Let's build <br /> <span className="text-zinc-500">together.</span>
+              Let&apos;s build <br /> <span className="text-zinc-500">together.</span>
             </h2>
           </div>
 
@@ -55,7 +56,7 @@ const Contact = () => {
               { label: "Github", icon: <Github size={20} />, href: "https://github.com/shreyash0216" },
               { label: "LinkedIn", icon: <Linkedin size={20} />, href: "https://www.linkedin.com/in/shreyash-atre-901340317/" },
               { label: "X / Twitter", icon: <span className="font-bold text-base">𝕏</span>, href: "https://x.com/atre_shreyash" },
-              { label: "Resume", icon: <FileCode size={20} />, href: "https://drive.google.com/file/d/1L77HQNQ3cc_8jI85kSaGXLg5SbB_2a_X/view?usp=share_link" },
+              { label: "Resume", icon: <FileCode size={20} />, href: getAssetPath("resume.pdf") },
             ].map((link) => (
               <a
                 key={link.label}

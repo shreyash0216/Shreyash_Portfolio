@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Github, ExternalLink, Code2, Layers, Briefcase, Zap, Terminal } from "lucide-react";
+import { Github, ExternalLink, Layers, Zap, Terminal } from "lucide-react";
 import { getAssetPath } from "@/lib/utils";
 
 const PROJECTS = [

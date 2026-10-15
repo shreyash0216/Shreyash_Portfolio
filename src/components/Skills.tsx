@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Server, Layout, Cloud, Settings, Brain, Smartphone, Code2, Database } from "lucide-react";
+import { Server, Layout, Cloud, Brain, Code2, Database } from "lucide-react";
 
 const SKILL_CATEGORIES = [
   {

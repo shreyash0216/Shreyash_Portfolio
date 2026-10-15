@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Terminal, ShieldCheck, Cpu, Briefcase } from "lucide-react";
+import { Briefcase } from "lucide-react";
 import { getAssetPath } from "@/lib/utils";
 
 interface ExperienceItem {
