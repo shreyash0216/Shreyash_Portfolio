@@ -54,6 +54,9 @@ export const metadata: Metadata = {
     description: "Final-year B.Sc. CS student shipping production full-stack systems solo (Node.js/NestJS, React, PostgreSQL).",
     images: ["https://shreyash0216.github.io/Shreyash_Portfolio/og-image.png"],
   },
+  verification: {
+    google: "QIn8mk_qfu7k6Y6nnTK-GvS05PLK68xYRzgYa_TGV04",
+  },
 };
 
 export default function RootLayout({
