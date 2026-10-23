@@ -1,162 +1,187 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Github, ExternalLink, Layers, Zap, Terminal } from "lucide-react";
+import { Github, ExternalLink, Code2, Layers, ShieldCheck, CheckCircle2, Trophy, Terminal, Award } from "lucide-react";
 import { getAssetPath } from "@/lib/utils";
 
-const PROJECTS = [
+interface ProjectItem {
+  id: string;
+  title: string;
+  tagline: string;
+  category: string;
+  role: string;
+  problem: string;
+  contribution: string;
+  decisions: string[];
+  architecture: string;
+  results: string;
+  stack: string[];
+  links: {
+    demo?: string;
+    github?: string;
+  };
+  logo?: string;
+  featuredBadge?: {
+    text: string;
+    icon: "trophy" | "production" | "award";
+  };
+}
+
+const FEATURED_PROJECTS: ProjectItem[] = [
   {
+    id: "syantrex-erp",
     title: "Syantrex ERP",
-    style: "Multi-Tenant SaaS",
-    desc: "Production retail business management platform built around real-world retail workflows. Shipped solo with Node.js/Express backend, PostgreSQL database, React frontend, JWT/bcrypt auth with RBAC, Socket.IO real-time sync, and PDF billing deployed to DigitalOcean & Render.",
-    problem: "Electronics retailers face IMEI tracking gaps, inventory desynchronization, and multi-tenant access control risks during high-throughput checkouts.",
-    role: "Independent Project Lead — Full-Stack Development",
-    arch: "Multi-Tenant Event-Driven Architecture (NestJS/Express + PostgreSQL + Socket.IO + React)",
-    tech: ["NestJS", "Node.js", "Express.js", "PostgreSQL", "React", "Socket.IO", "DigitalOcean", "Render.com"],
-    links: { demo: "https://www.syantrex.online" },
-    accent: "#9333ea",
-    logo: "syantrex-logo-dark.png"
+    tagline: "Production Multi-Tenant Business & Retail Management Platform",
+    category: "Full-Stack & Cloud Architecture",
+    role: "Co-Founder & Full Stack Engineer — Syantrex Technologies",
+    problem: "Retail electronics businesses suffer from fragmented IMEI/serial inventory tracking, multi-tenant permission vulnerabilities, and lack of real-time inventory synchronization during checkout operations.",
+    contribution: "Architected and engineered the entire application end-to-end: designed modular backend microservices, modeled normalized relational schemas, built responsive web clients, and managed production cloud deployments.",
+    decisions: [
+      "Modular NestJS & Express architecture with strict tenant schema isolation and stateless session management.",
+      "Stateless JWT authentication with bcrypt password hashing and fine-grained Role-Based Access Control (RBAC).",
+      "Socket.IO event bus for live multi-terminal inventory deduction and real-time checkout updates.",
+      "Production deployment on a DigitalOcean droplet with Render.com automated staging fallback and Postman test validation."
+    ],
+    architecture: "Multi-Tenant Event-Driven Architecture (NestJS/Express + PostgreSQL + React + Socket.IO + DigitalOcean)",
+    results: "Live in production at syantrex.online; 5 release-blocking issues preemptively resolved via end-to-end Postman QA suites before public release.",
+    stack: ["NestJS", "Node.js", "Express.js", "PostgreSQL", "React", "Socket.IO", "DigitalOcean", "Render", "RBAC", "Postman"],
+    links: {
+      demo: "https://www.syantrex.online"
+    },
+    logo: "syantrex-logo-dark.png",
+    featuredBadge: {
+      text: "Production Deployment",
+      icon: "production"
+    }
   },
   {
+    id: "dermascan-ai",
     title: "DermaScanAI",
-    style: "AI Healthcare (2nd Prize)",
-    desc: "AI-powered skin disease detection project combining computer vision with practical healthcare workflows, image-based condition classification, triage guidance, and clinic discovery using OpenStreetMap APIs.",
-    problem: "Early detection of dermatological conditions is hindered by scarce clinical specialists and lack of automated location-aware triage.",
-    role: "Backend & System Contributor (SP College 2nd Prize Winner)",
-    arch: "Multi-Tier Inference & Spatial Mapping Engine (FastAPI + TensorFlow + Next.js + OSM APIs)",
-    tech: ["Next.js", "FastAPI", "TensorFlow", "OpenStreetMap APIs", "Python", "REST APIs"],
-    links: { github: "https://github.com/siddheshwar09/DermaScanAI" },
-    accent: "#10b981",
-    logo: "dermascan-logo-dark.png"
+    tagline: "AI-Powered Dermatological Condition Detection & Triage Engine",
+    category: "Healthcare AI & Spatial Computing",
+    role: "Backend & ML System Contributor",
+    problem: "Early detection of dermatological conditions is delayed by limited specialist dermatologist availability, and general patients lack immediate, location-aware triage guidance to find appropriate nearby clinics.",
+    contribution: "Built the backend inference pipeline, integrated the deep learning model for skin lesion classification, and engineered geolocation-based clinic discovery using OpenStreetMap Overpass APIs.",
+    decisions: [
+      "Engineered FastAPI backend for asynchronous, low-latency image preprocessing and TensorFlow model inference.",
+      "Integrated OpenStreetMap Overpass API to query nearby certified dermatology clinics based on user coordinates without proprietary vendor lock-in.",
+      "Implemented structured validation for uploaded clinical photographs with fallback triage suggestions for ambiguous confidence scores."
+    ],
+    architecture: "Multi-Tier Computer Vision & Spatial Mapping Pipeline (FastAPI + TensorFlow + Next.js + OpenStreetMap)",
+    results: "Awarded 2nd Prize Winner at Sir Parashurambhau College Science Exhibition 2026 competing against 10+ engineering teams.",
+    stack: ["FastAPI", "TensorFlow", "Next.js", "Python", "OpenStreetMap API", "Tailwind CSS", "REST APIs"],
+    links: {
+      github: "https://github.com/siddheshwar09/DermaScanAI"
+    },
+    logo: "dermascan-logo-dark.png",
+    featuredBadge: {
+      text: "2nd Prize Winner (SP College 2026)",
+      icon: "trophy"
+    }
   },
   {
-    title: "GRA — Resilience Agent",
-    style: "GenAI & Climate (IIT Bombay Techfest)",
-    desc: "Full React rewrite of an ML-powered frontend (10 crop varieties) preserving the existing prediction engine and Gemini API integration within a fixed hackathon timeline (Team COSMOS, AWS ImpactX Challenge).",
-    problem: "Reliable climate risk data and crop recommendations fail under low-connectivity or high-latency environments without resilient client fallback.",
+    id: "gra-climate",
+    title: "GRA — Generative Resilience Agent",
+    tagline: "GenAI Climate Risk Modeling & Adaptive Agriculture Advisor",
+    category: "GenAI & Resilient Systems",
     role: "Frontend Lead (Team COSMOS)",
-    arch: "Fault-Tolerant Generative AI Client Architecture (React + Vite + Gemini API)",
-    tech: ["React", "Vite", "TypeScript", "Gemini API", "Tailwind CSS", "AWS"],
-    links: { demo: "https://www.genresai.me/", github: "https://github.com/shreyash0216/Gra-2" },
-    accent: "#22c55e",
-    logo: "gra-logo.png"
-  },
+    problem: "Agricultural producers in rural areas face catastrophic crop loss from climate shifts, but existing risk modeling tools are too slow, heavy, and unreliable under poor network connectivity.",
+    contribution: "Led and completed a complete frontend rewrite in React/Vite within a constrained hackathon timeline while preserving ML prediction engine integration and Gemini API workflows.",
+    decisions: [
+      "Architected lightweight React SPA with client-side state caching to survive intermittent internet connectivity.",
+      "Structured resilient Gemini API prompt chains with graceful client-side fallbacks for tailored advisory across 10 crop varieties.",
+      "Enforced zero-dependency bundle hygiene to maintain sub-second first input delay (FID) on entry-level mobile devices."
+    ],
+    architecture: "Fault-Tolerant Generative AI Client (React + TypeScript + Vite + Gemini API + AWS)",
+    results: "Selected national participant in the AWS ImpactX Challenge at IIT Bombay Techfest 2025.",
+    stack: ["React", "TypeScript", "Vite", "Gemini API", "Tailwind CSS", "AWS"],
+    links: {
+      demo: "https://www.genresai.me/",
+      github: "https://github.com/shreyash0216/Gra-2"
+    },
+    logo: "gra-logo.png",
+    featuredBadge: {
+      text: "IIT Bombay Techfest Participant",
+      icon: "award"
+    }
+  }
+];
+
+const SECONDARY_PROJECTS = [
   {
-    title: "Careasa Healthcare Platform",
-    style: "Production REST APIs",
-    desc: "Built 15+ production REST APIs with Node.js/Express and JWT authentication, achieving 99%+ cross-platform data reliability across web and mobile clients, with end-to-end PostgreSQL/Sequelize integration.",
-    problem: "Healthcare providers require strictly authenticated patient workflows, zero-drift cross-platform synchronization, and resilient production database configs.",
+    title: "Careasa Healthcare Platform APIs",
     role: "App Development Intern",
-    arch: "Relational REST Architecture (Node.js + Express + Sequelize + PostgreSQL)",
-    tech: ["Node.js", "Express.js", "PostgreSQL", "Sequelize", "JWT Auth", "Postman"],
+    category: "Enterprise Healthcare REST Backend",
+    desc: "Engineered 15+ production REST APIs using Node.js/Express with JWT authentication and PostgreSQL/Sequelize ORM, achieving 99%+ cross-platform data reliability across web and mobile clients.",
+    stack: ["Node.js", "Express.js", "PostgreSQL", "Sequelize", "JWT Auth", "Postman"],
     links: { demo: "https://www.careasa.com" },
-    accent: "#3b82f6",
     logo: "careasa-logo.png"
   },
   {
-    title: "OCR Assistant & CV Pipeline",
-    style: "Computer Vision",
-    desc: "Real-time object detection and OCR pipeline utilizing YOLOv3 and Tesseract for continuous video stream processing, text extraction, and automated classification.",
-    problem: "Manual data entry and classification from physical documents or video streams in dynamic environments is slow and error-prone.",
+    title: "Computer Vision & OCR Stream Pipeline",
     role: "Lead Developer",
-    arch: "Real-Time Video Stream Inference Pipeline",
-    tech: ["Python", "YOLOv3", "Tesseract", "OpenCV", "NumPy"],
-    links: { github: "https://github.com/shreyash0216/Object-Detection" },
-    accent: "#ef4444"
+    category: "Real-Time Image Processing",
+    desc: "Engineered an asynchronous video stream processing pipeline combining YOLOv3 bounding-box object detection with Tesseract OCR for automated real-time text extraction.",
+    stack: ["Python", "YOLOv3", "Tesseract OCR", "OpenCV", "NumPy"],
+    links: { github: "https://github.com/shreyash0216/Object-Detection" }
   }
 ];
 
 const Projects = () => {
   return (
-    <section id="projects" className="scroll-mt-32">
-      <div className="flex justify-between items-end mb-12">
-        <div>
-          <h2 className="text-6xl font-extrabold tracking-tight text-mask">Selected Works</h2>
-          <p className="text-zinc-500 font-mono text-sm uppercase tracking-widest mt-4">/ Case Studies & Architecture</p>
+    <section id="projects" className="scroll-mt-20">
+      {/* Section Header */}
+      <div className="flex items-center justify-between gap-4 mb-8 pb-3 border-b border-white/[0.07]">
+        <div className="flex items-center gap-2.5">
+          <Code2 size={18} className="text-blue-400" />
+          <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-white">Featured Projects</h2>
         </div>
+        <span className="font-mono text-xs uppercase tracking-widest text-zinc-500">
+          Case Studies &bull; Syantrex ERP &bull; DermaScanAI &bull; GRA
+        </span>
       </div>
 
-      <div className="space-y-16">
-        {PROJECTS.map((project, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 items-center`}
+      {/* Featured Projects Deep Dive */}
+      <div className="space-y-8 sm:space-y-10">
+        {FEATURED_PROJECTS.map((project) => (
+          <div
+            key={project.id}
+            className="editorial-card p-6 sm:p-8 space-y-6 group"
           >
-            {/* Visual Representation */}
-            <div className="w-full lg:w-3/5 aspect-video glass-card overflow-hidden relative group border border-white/10">
-              {/* Top Window Bar */}
-              <div className="absolute top-0 left-0 right-0 h-9 px-4 border-b border-white/5 bg-black/50 backdrop-blur-md flex items-center justify-between z-20">
-                <div className="flex items-center gap-1.5">
-                  <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
-                  <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
+            {/* Top Bar: Title, Category, Badge & External Links */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-white/[0.06]">
+              <div>
+                <div className="flex items-center gap-2.5 mb-1">
+                  <span className="font-mono text-[11px] uppercase tracking-wider text-blue-400 font-semibold">
+                    {project.category}
+                  </span>
+                  {project.featuredBadge && (
+                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded text-[10px] font-mono uppercase bg-amber-500/10 text-amber-300 border border-amber-500/20">
+                      {project.featuredBadge.icon === "trophy" && <Trophy size={11} className="text-amber-400" />}
+                      {project.featuredBadge.icon === "award" && <Award size={11} className="text-amber-400" />}
+                      {project.featuredBadge.icon === "production" && <ShieldCheck size={11} className="text-emerald-400" />}
+                      <span>{project.featuredBadge.text}</span>
+                    </span>
+                  )}
                 </div>
-                <div className="text-[10px] font-mono text-zinc-400 flex items-center gap-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  <span className="tracking-wider">{project.links.demo ? project.links.demo.replace('https://', '').replace('www.', '') : 'architecture-preview'}</span>
-                </div>
-                <div className="text-[9px] font-mono uppercase tracking-widest text-zinc-600">v2.4</div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                  {project.title}
+                </h3>
+                <p className="text-xs sm:text-sm text-zinc-400 font-mono mt-0.5">
+                  {project.tagline}
+                </p>
               </div>
 
-              {/* Ambient Glow */}
-              <div
-                className="absolute inset-0 opacity-25 transition-opacity group-hover:opacity-40"
-                style={{
-                  background: `radial-gradient(circle at 50% 55%, ${project.accent}35, transparent 70%)`,
-                }}
-              />
-
-              <div className="absolute inset-0 pt-9 flex items-center justify-center p-6 md:p-10">
-                {project.logo ? (
-                  <div className="relative group/logo flex flex-col items-center gap-4">
-                    <div
-                      className="absolute -inset-10 rounded-full blur-3xl opacity-30 group-hover/logo:opacity-50 transition-opacity duration-500"
-                      style={{ background: project.accent }}
-                    />
-
-                    {/* Sleek Dark Frosted Tile with zero harsh white background */}
-                    <div className="relative z-10 px-8 py-6 md:px-12 md:py-8 bg-zinc-950/60 hover:bg-zinc-900/60 rounded-2xl md:rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.8)] border border-white/10 backdrop-blur-2xl flex items-center justify-center transform group-hover/logo:scale-105 transition-all duration-500">
-                      <img
-                        src={getAssetPath(project.logo)}
-                        alt={`${project.title} project logo`}
-                        className="w-28 sm:w-36 md:w-44 h-auto max-h-16 md:max-h-20 object-contain drop-shadow-[0_8px_16px_rgba(0,0,0,0.4)]"
-                      />
-                    </div>
-
-                    <div className="relative z-10 flex items-center gap-2 px-3 py-1 bg-white/[0.04] border border-white/10 rounded-full backdrop-blur-md text-[10px] font-mono text-zinc-400">
-                      <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: project.accent }} />
-                      <span className="tracking-wide font-medium text-zinc-300">{project.title}</span>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="w-full h-full font-mono text-[11px] text-zinc-400 p-6 flex flex-col justify-center items-center gap-3 border border-white/5 rounded-2xl bg-black/40">
-                    <div className="text-red-400 font-bold text-lg md:text-xl flex items-center gap-2">
-                      <Terminal size={18} /> OCR Assistant &amp; CV Pipeline
-                    </div>
-                    <div className="text-xs text-zinc-500 max-w-sm text-center font-mono">
-                      [YOLOv3 Inference Engine] • [Tesseract OCR Extraction] • [OpenCV Video Pipeline]
-                    </div>
-                    <div className="flex gap-2 mt-2">
-                      <span className="px-2 py-0.5 bg-red-500/10 border border-red-500/20 text-red-400 rounded text-[9px]">REAL-TIME 60FPS</span>
-                      <span className="px-2 py-0.5 bg-white/5 border border-white/10 text-zinc-300 rounded text-[9px]">BOUNDING BOX ACCURACY</span>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              <div className="absolute bottom-4 left-4 md:bottom-6 md:left-6 flex gap-3 z-30">
+              {/* Action Buttons */}
+              <div className="flex items-center gap-2 shrink-0">
                 {project.links.github && (
                   <a
                     href={project.links.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2.5 bg-black/80 backdrop-blur-md border border-white/15 rounded-xl hover:scale-110 transition-transform text-zinc-300 hover:text-white"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/[0.03] hover:bg-white/[0.08] border border-white/10 rounded-lg text-xs font-mono text-zinc-300 hover:text-white transition-colors focus-ring"
                   >
-                    <Github size={16} />
+                    <Github size={14} />
+                    <span>Source</span>
                   </a>
                 )}
                 {project.links.demo && (
@@ -164,61 +189,188 @@ const Projects = () => {
                     href={project.links.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2.5 bg-black/80 backdrop-blur-md border border-white/15 rounded-xl hover:scale-110 transition-transform text-accent"
+                    className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-blue-600 hover:bg-blue-500 rounded-lg text-xs font-mono text-white transition-colors focus-ring"
                   >
-                    <ExternalLink size={16} />
+                    <span>Live Preview</span>
+                    <ExternalLink size={13} />
                   </a>
                 )}
               </div>
             </div>
 
-            {/* Info */}
-            <div className="w-full lg:w-2/5 space-y-4">
-              <div className="space-y-2">
-                <span className="text-xs font-mono text-accent font-bold uppercase tracking-widest" style={{ color: project.accent }}>
-                  {project.style}
+            {/* Structured Engineering Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+              
+              {/* Visual Preview / Architecture Header */}
+              <div className="lg:col-span-5 order-2 lg:order-1">
+                <div className="rounded-xl overflow-hidden border border-white/10 bg-zinc-950 p-4 sm:p-5 space-y-4">
+                  {/* Window Bar */}
+                  <div className="flex items-center justify-between pb-3 border-b border-white/[0.06] text-[10px] font-mono text-zinc-500">
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-zinc-700" />
+                      <span className="w-2 h-2 rounded-full bg-zinc-700" />
+                      <span className="w-2 h-2 rounded-full bg-zinc-700" />
+                    </div>
+                    <span>{project.id}.service.ts</span>
+                  </div>
+
+                  {/* Logo / Entity Emblem */}
+                  <div className="py-6 flex flex-col items-center justify-center gap-3">
+                    {project.logo ? (
+                      <div className="p-4 bg-zinc-900/90 rounded-2xl border border-white/10 shadow-inner flex items-center justify-center">
+                        <img
+                          src={getAssetPath(project.logo)}
+                          alt={`${project.title} logo`}
+                          className="max-h-16 w-auto object-contain"
+                        />
+                      </div>
+                    ) : (
+                      <div className="p-4 bg-zinc-900 rounded-2xl border border-white/10 text-zinc-400">
+                        <Terminal size={36} />
+                      </div>
+                    )}
+                    <div className="text-center">
+                      <span className="text-xs font-mono text-zinc-300 font-medium">{project.title}</span>
+                      <p className="text-[10px] font-mono text-zinc-500 mt-0.5">{project.role}</p>
+                    </div>
+                  </div>
+
+                  {/* Architecture Callout */}
+                  <div className="p-3 bg-white/[0.02] border border-white/[0.06] rounded-lg space-y-1">
+                    <div className="flex items-center gap-1.5 text-[10px] font-mono uppercase tracking-wider text-blue-400 font-semibold">
+                      <Layers size={12} />
+                      <span>Architecture Spec</span>
+                    </div>
+                    <p className="text-xs text-zinc-300 font-mono leading-relaxed">
+                      {project.architecture}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Narrative & Engineering Decisions */}
+              <div className="lg:col-span-7 order-1 lg:order-2 space-y-4">
+                
+                {/* The Problem */}
+                <div className="space-y-1">
+                  <h4 className="text-xs font-mono uppercase tracking-wider text-zinc-400 font-semibold">
+                    The Problem
+                  </h4>
+                  <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal">
+                    {project.problem}
+                  </p>
+                </div>
+
+                {/* My Contribution */}
+                <div className="space-y-1">
+                  <h4 className="text-xs font-mono uppercase tracking-wider text-blue-400 font-semibold">
+                    My Contribution
+                  </h4>
+                  <p className="text-xs sm:text-sm text-zinc-300 leading-relaxed font-normal">
+                    {project.contribution}
+                  </p>
+                </div>
+
+                {/* Important Technical Decisions */}
+                <div className="space-y-1.5 pt-1">
+                  <h4 className="text-xs font-mono uppercase tracking-wider text-zinc-400 font-semibold">
+                    Important Technical Decisions
+                  </h4>
+                  <ul className="space-y-1.5 text-xs text-zinc-300">
+                    {project.decisions.map((decision, dIdx) => (
+                      <li key={dIdx} className="flex items-start gap-2">
+                        <CheckCircle2 size={13} className="text-blue-400 mt-0.5 shrink-0" />
+                        <span className="leading-relaxed">{decision}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Verified Outcome */}
+                <div className="pt-2">
+                  <div className="p-3 bg-white/[0.02] border border-white/[0.06] rounded-lg">
+                    <span className="text-[10px] font-mono uppercase tracking-wider text-emerald-400 font-semibold block mb-0.5">
+                      Verified Outcome &bull; Benchmark
+                    </span>
+                    <p className="text-xs text-zinc-300 font-medium">
+                      {project.results}
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+
+            {/* Tech Stack Pills */}
+            <div className="pt-3 border-t border-white/[0.06] flex flex-wrap gap-1.5">
+              {project.stack.map((tech) => (
+                <span
+                  key={tech}
+                  className="px-2 py-0.5 bg-white/[0.03] border border-white/[0.06] rounded text-[10px] font-mono text-zinc-400"
+                >
+                  {tech}
                 </span>
-                <h3 className="text-4xl font-bold">{project.title}</h3>
-              </div>
+              ))}
+            </div>
 
-              <p className="text-zinc-400 text-lg leading-relaxed">
-                {project.desc}
-              </p>
+          </div>
+        ))}
+      </div>
 
-              <div className="space-y-4 pt-4">
-                <div className="flex items-start gap-4">
-                  <div className="p-2 bg-white/5 rounded-lg shrink-0 mt-1"><Terminal size={14} className="text-accent" /></div>
-                  <div>
-                    <h4 className="text-xs font-bold text-zinc-300 uppercase tracking-widest mb-1">Role</h4>
-                    <p className="text-sm text-zinc-300 font-medium">{project.role}</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="p-2 bg-white/5 rounded-lg shrink-0 mt-1"><Zap size={14} className="text-accent" /></div>
-                  <div>
-                    <h4 className="text-xs font-bold text-zinc-300 uppercase tracking-widest mb-1">Problem</h4>
-                    <p className="text-sm text-zinc-400">{project.problem}</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="p-2 bg-white/5 rounded-lg shrink-0 mt-1"><Layers size={14} className="text-accent" /></div>
-                  <div>
-                    <h4 className="text-xs font-bold text-zinc-300 uppercase tracking-widest mb-1">Architecture</h4>
-                    <p className="text-sm text-zinc-400">{project.arch}</p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-wrap gap-2 pt-4">
-                {project.tech.map((t) => (
-                  <span key={t} className="px-3 py-1 bg-zinc-900/50 border border-white/5 text-zinc-600 text-[10px] font-mono rounded-lg">
-                    {t}
+      {/* Additional Engineering Work */}
+      <div className="mt-8 pt-8 border-t border-white/[0.07]">
+        <h3 className="text-xs font-mono uppercase tracking-widest text-zinc-400 mb-4 font-semibold">
+          Additional Production &amp; Systems Work
+        </h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {SECONDARY_PROJECTS.map((sec, sIdx) => (
+            <div key={sIdx} className="editorial-card p-5 space-y-3 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between gap-2 mb-1">
+                  <span className="font-mono text-[10px] uppercase tracking-wider text-blue-400 font-semibold">
+                    {sec.category}
                   </span>
-                ))}
+                  <span className="text-[10px] font-mono text-zinc-500">{sec.role}</span>
+                </div>
+                <h4 className="text-base font-bold text-white tracking-tight">{sec.title}</h4>
+                <p className="text-xs text-zinc-300 leading-relaxed mt-2">{sec.desc}</p>
+              </div>
+
+              <div>
+                <div className="flex flex-wrap gap-1 mb-3 pt-2">
+                  {sec.stack.map(s => (
+                    <span key={s} className="px-1.5 py-0.5 bg-white/[0.02] border border-white/[0.05] rounded text-[9px] font-mono text-zinc-400">
+                      {s}
+                    </span>
+                  ))}
+                </div>
+                {sec.links.demo && (
+                  <a
+                    href={sec.links.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs font-mono text-blue-400 hover:text-blue-300 transition-colors focus-ring rounded"
+                  >
+                    <span>careasa.com</span>
+                    <ExternalLink size={12} />
+                  </a>
+                )}
+                {sec.links.github && (
+                  <a
+                    href={sec.links.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-xs font-mono text-blue-400 hover:text-blue-300 transition-colors focus-ring rounded"
+                  >
+                    <span>View Repository</span>
+                    <Github size={12} />
+                  </a>
+                )}
               </div>
             </div>
-          </motion.div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

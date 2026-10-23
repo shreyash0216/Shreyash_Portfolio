@@ -3,57 +3,87 @@
 @tailwind utilities;
 
 :root {
-  --background: #020204;
-  --foreground: #fcfcfc;
-  --accent: #0070f3;
-  --border: #1a1a1e;
+  --background: #08080b;
+  --foreground: #f4f4f5;
+  --accent: #3b82f6;
+  --border: #27272a;
 }
 
 @layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
   body {
-    @apply bg-background text-foreground antialiased selection:bg-accent/30 selection:text-accent;
-    font-family: var(--font-inter), ui-sans-serif, system-ui;
-    background-image:
-      radial-gradient(circle at 2px 2px, rgba(255,255,255,0.02) 1px, transparent 0);
-    background-size: 40px 40px;
-  }
-
-  /* Handcrafted Noise Texture Overlay */
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.02;
-    z-index: 9999;
-    pointer-events: none;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    @apply bg-background text-foreground antialiased selection:bg-blue-500/30 selection:text-blue-200;
+    font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #08080b;
+    background-image: 
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.06), transparent 100%),
+      radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.03) 1px, transparent 0);
+    background-size: 100% 100%, 32px 32px;
+    background-repeat: no-repeat, repeat;
   }
 }
 
+/* Engineering-grade Panel & Card Styling */
+.editorial-card {
+  background: rgba(14, 15, 20, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.04), 0 12px 32px -12px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  transition: border-color 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.editorial-card:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(20, 21, 28, 0.82);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.08), 0 16px 36px -12px rgba(0, 0, 0, 0.7);
+}
+
+/* Legacy glass-card alias to ensure backwards compatibility */
 .glass-card {
-  @apply bg-[#08080a]/80 border border-white/5 rounded-2xl backdrop-blur-xl transition-all duration-500;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  @apply editorial-card;
 }
 
-.glass-card:hover {
-  @apply border-white/10 bg-[#0c0c0e]/90;
+/* Focus visibility for accessibility */
+.focus-ring {
+  @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400/80 focus-visible:ring-offset-2 focus-visible:ring-offset-zinc-950;
 }
 
-/* Custom Typography Rhythms */
-.text-mask {
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-image: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.5) 100%);
-}
-
+/* Micro callouts */
 .engineering-callout {
-  @apply font-mono text-[10px] uppercase tracking-[0.2em] text-accent py-1 px-2 bg-accent/5 border border-accent/10 rounded;
+  @apply font-mono text-[10px] uppercase tracking-wider text-blue-400 py-0.5 px-2 bg-blue-500/10 border border-blue-500/20 rounded-md;
 }
 
-/* Scrollbar Engineering */
-::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { @apply bg-white/10 rounded-full hover:bg-accent/50 transition-colors; }
+/* Custom Minimalist Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Reduced motion preference support */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

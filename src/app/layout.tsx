@@ -1,48 +1,64 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
 });
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jetbrains-mono",
+  display: "swap",
 });
+
+export const viewport: Viewport = {
+  themeColor: "#08080b",
+  colorScheme: "dark",
+  width: "device-width",
+  initialScale: 1,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://shreyash0216.github.io/Shreyash_Portfolio/"),
-  title: "Shreyash Atre | Full-Stack Developer (Node.js, NestJS, React, PostgreSQL)",
-  description: "Final-year B.Sc. Computer Science student (CGPA 8.68) shipping production full-stack systems solo (Node.js/NestJS, React, PostgreSQL). Independent Project Lead at Syantrex. Available immediately in Pune.",
+  title: "Shreyash Atre — Software Developer",
+  description: "Software Developer based in Pune building reliable software products, scalable backend systems, full-stack applications, and AI-powered solutions. Co-Founder & Full Stack Engineer at Syantrex Technologies.",
   keywords: [
     "Shreyash Atre",
-    "Full-Stack Developer",
-    "Software Engineer",
+    "Software Developer",
+    "Backend Engineer",
+    "Full Stack Engineer",
+    "Product Builder",
     "Node.js",
     "NestJS",
     "React",
+    "Next.js",
     "PostgreSQL",
+    "FastAPI",
     "REST APIs",
     "Syantrex ERP",
+    "Syantrex Technologies",
     "Pune",
     "Sir Parashurambhau College"
   ],
+  authors: [{ name: "Shreyash Atre", url: "https://shreyash0216.github.io/Shreyash_Portfolio/" }],
+  creator: "Shreyash Atre",
   alternates: {
     canonical: "https://shreyash0216.github.io/Shreyash_Portfolio/",
   },
   openGraph: {
-    title: "Shreyash Atre | Full-Stack Developer",
-    description: "Final-year B.Sc. CS student (CGPA 8.68) shipping production full-stack systems solo. Node.js/NestJS, React, PostgreSQL, REST APIs.",
+    title: "Shreyash Atre — Software Developer",
+    description: "I build reliable software products, scalable backend systems, full-stack applications, and AI-powered solutions.",
     url: "https://shreyash0216.github.io/Shreyash_Portfolio/",
-    siteName: "Shreyash Atre Portfolio",
+    siteName: "Shreyash Atre",
     images: [
       {
-        url: "https://shreyash0216.github.io/Shreyash_Portfolio/og-image.png",
+        url: "https://shreyash0216.github.io/Shreyash_Portfolio/shreyash.jpg",
         width: 1200,
         height: 630,
-        alt: "Shreyash Atre - Full-Stack Developer",
+        alt: "Shreyash Atre — Software Developer",
       },
     ],
     locale: "en_US",
@@ -50,9 +66,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shreyash Atre | Full-Stack Developer",
-    description: "Final-year B.Sc. CS student shipping production full-stack systems solo (Node.js/NestJS, React, PostgreSQL).",
-    images: ["https://shreyash0216.github.io/Shreyash_Portfolio/og-image.png"],
+    title: "Shreyash Atre — Software Developer",
+    description: "I build reliable software products, scalable backend systems, full-stack applications, and AI-powered solutions.",
+    images: ["https://shreyash0216.github.io/Shreyash_Portfolio/shreyash.jpg"],
+    creator: "@atre_shreyash",
   },
   verification: {
     google: "QIn8mk_qfu7k6Y6nnTK-GvS05PLK68xYRzgYa_TGV04",
@@ -72,8 +89,8 @@ export default function RootLayout({
     "familyName": "Atre",
     "url": "https://shreyash0216.github.io/Shreyash_Portfolio/",
     "image": "https://shreyash0216.github.io/Shreyash_Portfolio/shreyash.jpg",
-    "jobTitle": "Full-Stack Developer",
-    "description": "Full-Stack Developer specializing in Node.js, NestJS, React, PostgreSQL, and scalable REST APIs. Independent Project Lead at Syantrex based in Pune.",
+    "jobTitle": "Software Developer",
+    "description": "Software Developer based in Pune building reliable software products, scalable backend systems, full-stack applications, and AI-powered solutions. Co-Founder & Full Stack Engineer at Syantrex Technologies.",
     "email": "mailto:shreyashatre16@gmail.com",
     "address": {
       "@type": "PostalAddress",
@@ -89,25 +106,35 @@ export default function RootLayout({
     "worksFor": [
       {
         "@type": "Organization",
-        "name": "Syantrex",
+        "name": "Syantrex Technologies",
         "url": "https://www.syantrex.online"
       }
     ],
     "knowsAbout": [
+      "Software Development",
+      "Backend Architecture",
+      "Full-Stack Engineering",
       "Node.js",
       "NestJS",
       "TypeScript",
+      "JavaScript",
+      "Python",
+      "FastAPI",
       "React",
       "Next.js",
       "PostgreSQL",
+      "Sequelize",
+      "Redis",
       "RESTful API Development",
-      "DigitalOcean",
       "Socket.IO",
       "Role-Based Access Control (RBAC)",
-      "Database Architecture"
+      "Docker",
+      "Flutter",
+      "Dart",
+      "AWS"
     ],
     "sameAs": [
-      "https://linkedin.com/in/shreyash-atre-901340317",
+      "https://www.linkedin.com/in/shreyash-atre-901340317/",
       "https://github.com/shreyash0216",
       "https://x.com/atre_shreyash",
       "https://www.syantrex.online"

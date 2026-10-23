@@ -1,64 +1,76 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { Shield, Zap, Layers, RefreshCw } from "lucide-react";
+import { ShieldCheck, Layers, Zap, RefreshCw, Cpu } from "lucide-react";
 
 const PRINCIPLES = [
   {
     title: "Build It Clearly",
-    desc: "Architecting modular, maintainable systems with clean REST API design, strict RBAC, and explicit data contracts that prevent tech debt.",
-    icon: <Shield size={20} className="text-blue-400" />
+    tag: "Design & Contracts",
+    desc: "Architecting modular, maintainable systems with clean REST API design, strict RBAC, and explicit data contracts that prevent technical debt.",
+    icon: <ShieldCheck size={18} className="text-blue-400" />
   },
   {
     title: "Understand It Deeply",
-    desc: "Full-stack system comprehension — from PostgreSQL schema migrations and environment config to client state and network serialization.",
-    icon: <Layers size={20} className="text-purple-400" />
+    tag: "Full-Stack Mental Model",
+    desc: "End-to-end system comprehension — from PostgreSQL schema migrations and environment variables to React DOM reconciliation and network serialization.",
+    icon: <Layers size={18} className="text-purple-400" />
   },
   {
     title: "Optimize When It Matters",
-    desc: "Targeting high-impact bottlenecks: sub-100ms API responses, database indexing, and memory/OOM prevention rather than premature abstractions.",
-    icon: <Zap size={20} className="text-yellow-400" />
+    tag: "Targeted Performance",
+    desc: "Targeting high-impact bottlenecks: sub-100ms API latency, database indexing, and memory allocation rather than premature micro-optimizations.",
+    icon: <Zap size={18} className="text-amber-400" />
   },
   {
     title: "Resilience & Rigorous QA",
-    desc: "End-to-end API validation with Postman, structured pre-launch testing, and dual staging/fallback deployments (DigitalOcean + Render).",
-    icon: <RefreshCw size={20} className="text-green-400" />
+    tag: "Production Reliability",
+    desc: "End-to-end API verification with Postman, structured pre-launch QA passes, and dual staging/fallback deployments (DigitalOcean + Render).",
+    icon: <RefreshCw size={18} className="text-emerald-400" />
   }
 ];
 
 const EngineeringPrinciples = () => {
   return (
-    <section className="scroll-mt-32">
-       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
-        <div>
-          <h2 className="text-3xl font-bold">Engineering Principles</h2>
-          <p className="text-zinc-500 font-mono text-xs uppercase tracking-widest mt-1">/ Architecture & Standards</p>
+    <section className="scroll-mt-20">
+      {/* Section Header */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-3 border-b border-white/[0.07]">
+        <div className="flex items-center gap-2.5">
+          <Cpu size={18} className="text-blue-400" />
+          <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-white">Engineering Principles</h2>
         </div>
-        <div className="text-xs font-mono text-zinc-400 bg-white/5 border border-white/5 px-4 py-2 rounded-xl">
-          &ldquo;Build it clearly, understand it deeply, and optimize it when it matters.&rdquo;
-        </div>
+        <span className="font-mono text-xs uppercase tracking-widest text-zinc-500">
+          Standards &amp; Architectural Mindset
+        </span>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        {PRINCIPLES.map((p, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            className="p-6 glass-card border-white/5 space-y-4 group"
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {PRINCIPLES.map((principle, idx) => (
+          <div
+            key={idx}
+            className="editorial-card p-5 space-y-3 flex flex-col justify-between group"
           >
-            <div className="w-12 h-12 rounded-2xl bg-zinc-950 border border-white/10 flex items-center justify-center transition-transform group-hover:scale-110">
-              {p.icon}
-            </div>
-            <div className="space-y-2">
-              <h3 className="font-bold text-lg">{p.title}</h3>
-              <p className="text-sm text-zinc-500 leading-relaxed">
-                {p.desc}
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <div className="p-2 rounded-lg bg-white/[0.03] border border-white/10 group-hover:border-white/20 transition-colors">
+                  {principle.icon}
+                </div>
+                <span className="text-[10px] font-mono uppercase tracking-wider text-zinc-500">
+                  {principle.tag}
+                </span>
+              </div>
+              <h3 className="text-sm font-bold text-zinc-100 tracking-tight">
+                {principle.title}
+              </h3>
+              <p className="text-xs text-zinc-400 leading-relaxed font-normal">
+                {principle.desc}
               </p>
             </div>
-          </motion.div>
+
+            <div className="pt-2 border-t border-white/[0.05] flex items-center justify-between text-[10px] font-mono text-zinc-500">
+              <span>Standard 0{idx + 1}</span>
+              <span className="text-blue-400/80">Enforced</span>
+            </div>
+          </div>
         ))}
       </div>
     </section>
